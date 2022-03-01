@@ -1,0 +1,118 @@
+.header {
+    width: 100%;
+    height: 150px;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 3px #c0c0c0;
+  
+    .header-logo {
+      width: 340px;
+      height: 70px;
+      img {
+        width: 100%;
+      }  
+    }
+  
+    
+    .header-list-items {
+      font-weight: 400;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      div {
+        margin-right: 30px;
+        
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+  
+      .rectangle {
+        background-color: yellowgreen;
+        padding: 4px 16px;
+        border-radius: 30px;
+  
+        a {
+          color: white;
+        }
+      }
+      
+    }
+
+    .toggle {
+        display: none;
+    }
+  }
+/*
+    tablets
+*/
+@media only screen and (max-width: 820px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: none;
+
+        .toggle {
+            display: none;
+        }
+    }
+}
+
+/*
+    mobile
+*/
+@media only screen and (max-width: 414px) {
+    .header {
+      position: relative;
+      display: block;
+        width: 100%;
+        height: 65px;
+        .header-logo {
+            width: 150px;
+            height: 26.75px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            line-height: 65px;
+            img {
+                width: 100%; 
+            }
+        }
+
+        .header-list-items {
+          position: absolute;
+          top: 70px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          left: -150%;
+          transform: translate(-50%);
+          width: 100%;
+          height: 100vh;
+
+          div {
+            height: 50px;
+            line-height: 50px;
+          }
+        }
+        .toggle {
+            display: block;
+            line-height: 65px;
+            margin-left: 30px;
+            i {
+              font-size: 20px;
+            }
+        }
+
+        .active {
+          left: 50%;
+        }
+    }
+}
