@@ -16,39 +16,6 @@
       border-radius: 15px;
     }
 
-    .card-img-dark-blue {
-      background-color: #3f6185;
-      border-radius: 15px 15px 0px 0px;
-
-      img {
-        width: 217px;
-        height: 125px;
-        margin: 45px 34px;
-      }
-    }
-
-    .card-img-red {
-      background-color: red;
-      border-radius: 15px 15px 0px 0px;
-
-      .laravel-bg {
-        width: 183.88px;
-        height: 125px;
-        margin: 45px 51px;
-      }
-    }
-
-    .card-img-light-blue {
-      background-color: #556598;
-      border-radius: 15px 15px 0px 0px;
-
-      img {
-        width: 219px;
-        height: 126px;
-        margin: 45px 34px;
-      }
-    }
-
     .font-title {
       font-weight: $font-weight-title;
       font-size: $font-size-title;
@@ -63,24 +30,59 @@
       color: #505353;
     }
 
-    .card-body {
-      .btn-course {
-        border-radius: 22px;
-        color: white;
-        background-color: $color-title-course-green;
-
-        &:hover {
-          background-color: rgba(178, 210, 53, 0.4);
-        }
-      }
-    }
-
     .card-list:first-child {
       margin-left: 3%;
     }
 
     .card-list:last-child {
       margin-right: 3%;
+    }
+  }
+}
+
+.content-list-course {
+  .card-img-dark-blue {
+    background-color: #3f6185;
+    border-radius: 15px 15px 0px 0px;
+
+    .card-img-html {
+      width: 217px;
+      height: 125px;
+      margin: 45px 34px;
+    }
+  }
+
+  .card-img-red {
+    background-color: red;
+    border-radius: 15px 15px 0px 0px;
+
+    .laravel-bg {
+      width: 183.88px;
+      height: 125px;
+      margin: 45px 51px;
+    }
+  }
+
+  .card-img-light-blue {
+    background-color: #556598;
+    border-radius: 15px 15px 0px 0px;
+
+    .card-img-php {
+      width: 219px;
+      height: 126px;
+      margin: 45px 34px;
+    }
+  }
+
+  .card-body {
+    .btn-course {
+      border-radius: 22px;
+      color: white;
+      background-color: $color-title-course-green;
+
+      &:hover {
+        background-color: rgba(178, 210, 53, 0.4);
+      }
     }
   }
 }
@@ -102,17 +104,28 @@
       top: 0;
 
       .card-list {
-        .card-img-light-blue,
-        .card-img-dark-blue,
-        .card-img-red {
-          img {
-            width: 190px;
-          }
-        }
+        width: 27%;
+        border-radius: 15px;
+      }
+    }
+  }
 
-        .font-title {
-          font-size: 17px;
-        }
+  .card-list {
+    .card-img-light-blue,
+    .card-img-dark-blue,
+    .card-img-red {
+      .card-img-html,
+      .laravel-bg,
+      .card-img-php {
+        width: 190px;
+      }
+    }
+  }
+
+  .content {
+    .card-list {
+      .font-title {
+        font-size: 17px;
       }
     }
   }
@@ -123,31 +136,53 @@
     top: 887px;
     .content-list-course {
       top: 0;
+    }
+  }
+
+  .card-list {
+    .card-img-dark-blue {
+      .card-img-html {
+        width: 152px;
+      }
+    }
+
+    .card-body {
+      .font-title {
+        font-size: 14px;
+      }
+    }
+
+    .card-img-red {
+      .laravel-bg {
+        width: 118.88px;
+      }
+    }
+
+    .card-img-light-blue {
+      .card-img-php {
+        width: 152px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 766px) {
+  .content {
+    top: 921px;
+
+    .content-list-course {
+      top: 0;
+      display: block;
+      width: 100%;
 
       .card-list {
-        .card-img-dark-blue {
-          img {
-            width: 152px;
-          }
-        }
+        width: 53%;
+        margin-bottom: 10%;
+        margin-left: 26%;
+      }
 
-        .card-body {
-          .font-title {
-            font-size: 14px;
-          }
-        }
-
-        .card-img-red {
-          .laravel-bg {
-            width: 118.88px;
-          }
-        }
-
-        .card-img-light-blue {
-          img {
-            width: 152px;
-          }
-        }
+      .card-list:first-child {
+        margin-left: 26%;
       }
     }
   }
