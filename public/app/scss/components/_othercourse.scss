@@ -44,7 +44,7 @@
 }
 
 .card-light-blue {
-  img {
+  .img-width {
     margin-top: 10%;
     margin-bottom: 10%;
     margin-left: 0;
@@ -54,7 +54,7 @@
 
 .card-red {
   background-color: #e14e40;
-  img {
+  .img-width {
     margin-top: 10%;
     margin-bottom: 10%;
     margin-left: 0;
@@ -64,7 +64,7 @@
 
 .card-dark-blue {
   background-color: #1b75bb;
-  img {
+  .img-width {
     margin-top: 0;
     margin-bottom: 3%;
     margin-left: 0;
@@ -122,9 +122,54 @@
       }
     }
 
+    .list-other-course {
+      .style-title {
+        font-size: 13px;
+      }
+    }
+
     .other-course-end {
       left: 23%;
       top: 56%;
+    }
+  }
+
+  .card-light-blue {
+    .img-width {
+      width: 190px;
+    }
+  }
+
+  .card-red {
+    .img-width {
+      width: 190px;
+    }
+  }
+
+  .card-dark-blue {
+    .img-width {
+      margin-bottom: 0;
+      width: 190px;
+    }
+  }
+}
+
+@media only screen and (max-width: 766px) {
+  .content-other-course {
+    top: 81%;
+
+    .list-other-course {
+      display: block;
+
+      .other-course-list {
+        width: 51%;
+        margin-left: 27%;
+        margin-bottom: 10%;
+      }
+    }
+
+    .other-course-end {
+      top: 112%;
     }
   }
 }
@@ -135,8 +180,10 @@
     width: 100%;
     height: 1200px;
     top: 1497px;
+
     .other-course-title {
-      p {
+
+      .other-course-text {
         text-align: center;
         font-style: normal;
         font-weight: bold;
