@@ -110,3 +110,19 @@
     }
   }
 }
+
+@media only screen and (max-width: 564px) {
+ .content {
+   .content-list-course {
+     .font-ruby {
+       font-size: 15px;
+     }
+   }
+ }
+
+ .content-other-course {
+   .other-course-end {
+     font-size: 35px;
+   }
+ }
+}
