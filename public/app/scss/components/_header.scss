@@ -1,69 +1,118 @@
-header {
+.header {
+  width: 100%;
   box-shadow: $box-shadow;
-  background-color: #ffffff;
 
-  a {
-    img {
-      width: 340.16px;
-      height: 70px;
-    }
+  .img-logo {
+    margin-top: 36px;
+    margin-left: 129px;
+    margin-bottom: 44px;
   }
 
-  #menu-bar {
-    cursor: pointer;
-    font-size: 25px;
+  .header-menu {
+    margin-top: 3px;
+    margin-left: 249px;
   }
 }
 
-.menu {
-  a {
-    margin-left: 3px;
-    border-radius: 17px;
-    color: black;
-    padding: 5px 15px;
-    text-transform: uppercase;
+.header-list {
+  .header-list-item {
+    margin-left: 20px;
+
+    .link-item {
+      color: $color;
+      font-family: Open Sans;
+      text-transform: uppercase;
+      font-size: 20;
+      line-height: 19px;
+    }
 
     &:hover {
-      color: white;
       background-color: $color-light-green;
+      border-radius: 17px;
     }
   }
 }
 
-@media (max-width: 1300px) {
-  header {
-    .header-items {
-      display: flex;
-      flex-direction: column;
+.header-list {
+  .header-list-item:hover {
+    .link-item {
+      color: white;
     }
   }
 }
 
-@media (max-width: 768px) {
-  header {
-    .header-items {
-      display: flex;
-      flex-direction: row;
-    }
-    .menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: white;
-      transition: 2s linear;
-      padding-left: 40%;
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+@media only screen and (max-width: 1024px) {
+  .header {
+    display: block;
 
-      a {
-        display: block;
-        width: 100%;
-        margin: 10px;
+    .img-logo {
+      margin-left: 343px;
+    }
+
+    .header-menu {
+      margin-bottom: 44px;
+      margin-left: 192px;
+    }
+
+    .header-list {
+      .header-list-item {
+        margin-right: 43px;
       }
     }
+  }
+}
 
-    .active {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+@media only screen and (max-width: 768px) {
+  .header {
+    display: block;
+
+    .img-logo {
+      margin-left: 202px;
+    }
+
+    .header-menu {
+      margin-bottom: 44px;
+      margin-left: 89px;
+    }
+
+    .header-list {
+      .header-list-item {
+        margin-right: 36px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 648px) {
+  .header {
+    display: block;
+
+    .img-logo {
+      margin-left: 151px;
+    }
+
+    .header-menu {
+      margin-bottom: 44px;
+      margin-left: 49px;
+    }
+
+    .header-list {
+      .header-list-item {
+        margin-right: 23px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 564px) {
+  .header {
+    .img-logo {
+      margin-top: -65px;
+    }
+
+    .btn-style {
+      margin-top: 60px;
+      margin-left: 23px;
     }
   }
 }

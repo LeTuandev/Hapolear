@@ -1,18 +1,13 @@
 .content {
-  position: absolute;
   width: 100%;
-  height: 2000px;
-  top: 842px;
+  margin-top: -86px;
 
   .content-list-course {
-    position: absolute;
-    top: 0;
-    width: 100%;
     display: flex;
-    justify-content: space-between;
 
     .card-list {
-      width: 27%;
+      margin-left: 49px;
+      margin-right: 50px;
       border-radius: 15px;
     }
 
@@ -29,49 +24,24 @@
       line-height: $line-height-text-course;
       color: #505353;
     }
-
-    .card-list:first-child {
-      margin-left: 3%;
-    }
-
-    .card-list:last-child {
-      margin-right: 3%;
-    }
   }
 }
 
 .content-list-course {
   .card-img-dark-blue {
     background-color: #3f6185;
-    border-radius: 15px 15px 0px 0px;
-
-    .card-img-html {
-      width: 217px;
-      height: 125px;
-      margin: 45px 34px;
-    }
   }
 
   .card-img-red {
     background-color: red;
-    border-radius: 15px 15px 0px 0px;
 
-    .laravel-bg {
-      width: 183.88px;
-      height: 125px;
-      margin: 45px 51px;
+    .card-img-laravel {
+      height: 188px;
     }
   }
 
   .card-img-light-blue {
     background-color: #556598;
-    border-radius: 15px 15px 0px 0px;
-
-    .card-img-php {
-      width: 219px;
-      height: 126px;
-      margin: 45px 34px;
-    }
   }
 
   .card-body {
@@ -91,121 +61,93 @@
   .content {
     .content-list-course {
       .font-title {
-        font-size: 18px;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 962px) {
-  .content {
-    top: 875px;
-    .content-list-course {
-      top: 0;
-
-      .card-list {
-        width: 27%;
-        border-radius: 15px;
+        font-size: 16px;
       }
     }
   }
 
-  .card-list {
-    .card-img-light-blue,
-    .card-img-dark-blue,
+  .content-list-course {
     .card-img-red {
-      .card-img-html,
-      .laravel-bg,
-      .card-img-php {
-        width: 190px;
-      }
-    }
-  }
-
-  .content {
-    .card-list {
-      .font-title {
-        font-size: 17px;
+      .card-img-laravel {
+        height: 132px;
       }
     }
   }
 }
 
-@media only screen and (max-width: 826px) {
+@media only screen and (max-width: 768px) {
   .content {
-    top: 887px;
-
     .content-list-course {
-      top: 0;
+      .card-list {
+        margin-left: 33px;
+        margin-right: 23px;
+      }
+      .font-title {
+        font-size: 12px;
+      }
+
+      .font-text {
+        font-size: 11px;
+      }
     }
   }
 
-  .card-list {
+  .content-list-course {
+    .card-img-red {
+      .card-img-laravel {
+        height: 132px;
+      }
+    }
+
     .card-img-dark-blue {
       .card-img-html {
-        width: 152px;
-      }
-    }
-
-    .card-body {
-      .font-title {
-        font-size: 14px;
-      }
-    }
-
-    .card-img-red {
-      .laravel-bg {
-        width: 118.88px;
+        height: 132px;
       }
     }
 
     .card-img-light-blue {
       .card-img-php {
-        width: 152px;
+        height: 132px;
       }
     }
   }
 }
 
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 648px) {
   .content {
-    top: 921px;
-
     .content-list-course {
-      top: 0;
-      display: block;
-      width: 100%;
-
       .card-list {
-        width: 53%;
-        margin-bottom: 10%;
-        margin-left: 26%;
+        margin-left: 33px;
+        margin-right: 23px;
+      }
+      .font-title {
+        font-size: 9px;
       }
 
-      .card-list:first-child {
-        margin-left: 26%;
+      .font-text {
+        font-size: 8px;
       }
     }
   }
 }
 
-@media only screen and (max-width: 754px) {
+@media only screen and (max-width: 564px) {
   .content {
-    top: 921px;
-
     .content-list-course {
-      top: 0;
       display: block;
-      width: 100%;
 
       .card-list {
-        width: 53%;
-        margin-bottom: 10%;
-        margin-left: 26%;
+        width: 342px;
+        margin-left: 107px;
+        margin-right: 23px;
+        margin-bottom: 37px;
+      }
+      .font-title {
+        font-size: 15px;
       }
 
-      .card-list:first-child {
-        margin-left: 26%;
+      .font-text {
+        font-size: 12px;
       }
     }
   }
