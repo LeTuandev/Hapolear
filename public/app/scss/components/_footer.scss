@@ -1,0 +1,210 @@
+.footer-top {
+  background-color: #505353;
+  width: 100%;
+  height: 308px;
+  margin-top: 10%;
+  display: flex;
+
+  .footer-left {
+    width: 40%;
+    display: flex;
+
+    .footer-left-des {
+      margin-top: 10%;
+    }
+
+    .footer-left-list {
+      margin-top: 11%;
+      margin-left: 23%;
+      width: 50%;
+      font-family: "UTM BryantLG";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+      color: white;
+    }
+  }
+
+  .footer-left-list-item {
+    margin-bottom: 11px;
+  }
+
+  .footer-right {
+    width: 40%;
+    display: flex;
+  }
+
+  .footer-right-list {
+    margin-top: 14%;
+    width: 50%;
+    font-family: "UTM BryantLG";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: white;
+  }
+
+  .footer-left-des-img {
+    width: 100%;
+  }
+
+  .footer-left-des-text {
+    font-family: "UTM BryantLG";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: white;
+    margin-left: 17%;
+  }
+}
+
+.footer-right-icon {
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  margin-top: 18%;
+  margin-left: 1%;
+
+  .footer-top-icon-fb {
+    margin-left: 30px;
+    font-size: 39px;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+.footer-bot {
+  width: 100%;
+  height: 38px;
+  background-color: #454545;
+  text-align: center;
+  color: white;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+  .footer-top {
+    .footer-left {
+      width: 70%;
+
+      .footer-left-des {
+        margin-left: -3%;
+      }
+
+      .footer-left-list {
+        margin-left: 3%;
+      }
+    }
+
+    .footer-right {
+      width: 46%;
+    }
+  }
+
+  .footer-right-icon {
+    margin-top: 34%;
+    margin-left: 0%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-top {
+    .footer-left {
+      width: 56%;
+      margin-left: -2%;
+
+      .footer-left-des {
+        margin-top: 13%;
+      }
+
+      .footer-left-list {
+        margin-top: 14%;
+        margin-left: 2%;
+      }
+    }
+
+    .footer-right {
+      width: 47%;
+
+      .footer-right-list {
+        margin-top: 20%;
+      }
+    }
+
+    .footer-top-img {
+      padding-left: 1%;
+
+      .img-footer {
+        width: 241px;
+      }
+    }
+
+    .footer-top-text {
+      .footer-top-text-left {
+        font-size: 14px;
+      }
+
+      .footer-top-text-right {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .footer-top-icon {
+    margin-top: 11%;
+    margin-left: 1%;
+
+    .footer-top-icon-fb {
+      font-size: 23px;
+    }
+  }
+
+  .footer-right-icon {
+    margin-top: 26%;
+    margin-left: -4%;
+  }
+}
+
+@media only screen and (max-width: 564px) {
+  .footer-top {
+    .footer-left {
+      display: flex;
+      flex-direction: column-reverse;
+
+      .footer-left-list {
+        margin-left: 27%;
+      }
+    }
+
+    .footer-right {
+      display: block;
+    }
+
+    .footer-left-des-text {
+      font-size: 16px;
+    }
+  }
+
+  .footer-left-des {
+    .footer-left-des-img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-right {
+    .footer-right-icon {
+      margin-left: 0;
+
+      .footer-top-icon-fb {
+        margin-left: 0;
+      }
+    }
+  }
+}

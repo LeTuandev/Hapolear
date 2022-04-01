@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $lesson = \App\Models\Lesson::find(1)['name'];
+    dd($lesson);
+    
+    //$users->lesson()->attach(1);
+    //return view('welcome');
 });
 
 Auth::routes();

@@ -1,154 +1,237 @@
-.content {
-  width: 100%;
-  margin-top: -86px;
+.list-course {
+  margin-top: -7%;
+}
 
-  .content-list-course {
-    display: flex;
+.bg-html {
+  background-color: #3f6185;
+}
 
-    .card-list {
-      margin-left: 49px;
-      margin-right: 50px;
-      border-radius: 15px;
-    }
+.bg-laravel {
+  background-color: red;
+  height: 192.47px;
+}
 
-    .font-title {
-      font-weight: $font-weight-title;
-      font-size: $font-size-title;
-      line-height: $line-height-title;
-      color: $color-title-course-green;
-    }
+.bg-php {
+  background-color: #3f6185;
+}
 
-    .font-text {
-      font-weight: bold;
-      font-size: $font-size-text-course;
-      line-height: $line-height-text-course;
-      color: #505353;
-    }
+.font-size-title {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 37px;
+  color: #b2d235;
+}
+
+.font-size-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  color: #505353;
+}
+
+.btn-course {
+  border-radius: 22px;
+  color: white;
+  background-color: $color-title-course-green;
+
+  &:hover {
+    background-color: rgba(178, 210, 53, 0.4);
   }
 }
 
-.content-list-course {
-  .card-img-dark-blue {
-    background-color: #3f6185;
+@media only screen and (max-width: 1920px) {
+  .list-course-container {
+    max-width: 1500px;
   }
 
-  .card-img-red {
-    background-color: red;
-
-    .card-img-laravel {
-      height: 188px;
-    }
+  .bg-laravel {
+    height: 258.84px;
   }
 
-  .card-img-light-blue {
-    background-color: #556598;
+  .card {
+    border-radius: 50px;
   }
 
-  .card-body {
-    .btn-course {
-      border-radius: 22px;
-      color: white;
-      background-color: $color-title-course-green;
+  .bg-html,
+  .bg-laravel,
+  .bg-php {
+    border-radius: 50px 50px 0px 0px;
+  }
 
-      &:hover {
-        background-color: rgba(178, 210, 53, 0.4);
-      }
-    }
+  .font-size-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 20px;
+  }
+
+  .font-size-title {
+    font-family: "UTM BryantLG";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 37px;
+    color: #b2d235;
+  }
+}
+
+@media only screen and (min-width: 1441px) and (max-width: 1688px) {
+  .list-course-container {
+    max-width: 1290px;
+  }
+
+  .bg-laravel {
+    height: 220.13px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .list-course-container {
+    max-width: 1282px;
+  }
+
+  .bg-laravel {
+    height: 218.64px;
+  }
+
+  .card {
+    border-radius: 50px;
+  }
+
+  .bg-html,
+  .bg-laravel,
+  .bg-php {
+    border-radius: 50px 50px 0px 0px;
+  }
+
+  .font-size-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 18px;
+  }
+
+  .font-size-title {
+    font-family: "UTM BryantLG";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 37px;
+    color: #b2d235;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1339px) {
+  .list-course-container {
+    max-width: 1109px;
+  }
+
+  .bg-laravel {
+    height: 186.75px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+  .list-course-container {
+    max-width: 924px;
+  }
+  .bg-laravel {
+    height: 152.64px;
+  }
+
+  .font-size-title {
+    font-size: 23px;
   }
 }
 
 @media only screen and (max-width: 1024px) {
-  .content {
-    .content-list-course {
-      .font-title {
-        font-size: 16px;
-      }
-    }
+  .list-course-container {
+    max-width: 946px;
   }
 
-  .content-list-course {
-    .card-img-red {
-      .card-img-laravel {
-        height: 132px;
-      }
-    }
+  .bg-laravel {
+    height: 159.28px;
+  }
+
+  .font-size-title {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+  .list-course-container {
+    max-width: 697px;
+  }
+  .bg-laravel {
+    height: 110.8px;
+  }
+
+  .font-size-title {
+    font-size: 16px;
+  }
+
+  .font-size-text {
+    font-size: 12px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .content {
-    .content-list-course {
-      .card-list {
-        margin-left: 33px;
-        margin-right: 23px;
-      }
-      .font-title {
-        font-size: 12px;
-      }
-
-      .font-text {
-        font-size: 11px;
-      }
-    }
+  .list-course-container {
+    max-width: 724px;
   }
 
-  .content-list-course {
-    .card-img-red {
-      .card-img-laravel {
-        height: 132px;
-      }
-    }
+  .bg-laravel {
+    height: 115.03px;
+  }
 
-    .card-img-dark-blue {
-      .card-img-html {
-        height: 132px;
-      }
-    }
+  .font-size-title {
+    font-size: 16px;
+  }
 
-    .card-img-light-blue {
-      .card-img-php {
-        height: 132px;
-      }
-    }
+  .font-size-text {
+    font-size: 10px;
   }
 }
 
-@media only screen and (max-width: 648px) {
-  .content {
-    .content-list-course {
-      .card-list {
-        margin-left: 33px;
-        margin-right: 23px;
-      }
-      .font-title {
-        font-size: 9px;
-      }
+// @media only screen and (min-width: 576px) and (max-width: 767px) {
+//   .bg-laravel {
+//     height: 81.84px;
+//   }
 
-      .font-text {
-        font-size: 8px;
-      }
-    }
+//   .font-size-title {
+//     font-size: 10px;
+//   }
+
+//   .font-size-text {
+//     font-size: 7px;
+//   }
+
+//   .btn-course {
+//     font-size: 9px;
+//   }
+// }
+
+// @media only screen and (min-width: 426px) and (max-width: 575px) {
+//   .bg-laravel {
+//     height: 217.91px;
+//   }
+// }
+
+@media only screen and (max-width: 425px) {
+  .bg-laravel {
+    height: 217.36px;
   }
-}
 
-@media only screen and (max-width: 564px) {
-  .content {
-    .content-list-course {
-      display: block;
+  .font-size-title {
+    font-size: 20px;
+  }
 
-      .card-list {
-        width: 342px;
-        margin-left: 107px;
-        margin-right: 23px;
-        margin-bottom: 37px;
-      }
-      .font-title {
-        font-size: 15px;
-      }
-
-      .font-text {
-        font-size: 12px;
-      }
-    }
+  .font-size-text {
+    font-size: 10px;
   }
 }

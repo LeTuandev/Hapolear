@@ -1,5 +1,4 @@
-const menu = document.querySelector("#menu-bar");
-
-menu.onclick = () => {
-    menu.classList.toggle('fa-xmark');
-}
+require('./components/header');
+require('./components/slick');
+require('./components/login');
+require('./components/mess');

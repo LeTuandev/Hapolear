@@ -5,6 +5,12 @@
 @import "./components/_courses";
 @import "./components/_othercourse";
 @import "./components/_whyhapolearn";
+@import "./components/_feedback";
+@import "./components/_bannerbottom";
+@import "./components/_statistic";
+@import "./components/_footer";
+@import "./components/_loginregister";
+@import "./components/_messenger";
 
 * {
   margin: 0;
@@ -13,7 +19,6 @@
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 

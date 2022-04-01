@@ -1,128 +1,199 @@
-.content-other-course {
-  margin-top: 96px;
+.other-course {
+  margin-top: 5%;
+  width: 100%;
 
-  .content-list-course {
-    margin-top: 10%;
+  .container {
+    margin-top: 5%;
   }
 
   .other-course-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: "UTM BryantLG";
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 80px;
     line-height: 98px;
     color: #11114e;
+    text-align: center;
+    border-bottom: 2px solid #b2d235;
+    border-bottom-width: thick;
+    width: 35%;
+    margin-left: 32%;
+  }
 
-    .course-underline {
-      background-color: #b2d235;
-      height: 5px;
-      width: 43%;
+  .viewhapolearn {
+    text-align: center;
+    font-family: "UTM BryantLG";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    margin-top: 5%;
+   
+    a {
+      text-decoration: none;
+      color: #90ab26;
+    }
+  }
+}
+.bg-css {
+  background-color: #3f6185;
+  height: 192.47px;
+}
+
+.bg-python {
+  background-color: red;
+  height: 192.47px;
+}
+
+.bg-java {
+  background-color: #3f6185;
+  height: 192.47px;
+}
+
+@media only screen and (max-width: 1920px) {
+  .other-course {
+    .other-course-title {
+      font-size: 111px;
     }
   }
 
-  .other-course-end {
-    text-align: center;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 52px;
-    line-height: 49px;
-    color: #90ab26;
-    margin-top: 5%;
+  .bg-css,
+  .bg-java,
+  .bg-python {
+    border-radius: 50px 50px 0px 0px;
+    height: 258.84px;
   }
 }
 
-.content-list-course {
-  .card-list {
-    .card-img-css {
-      height: 182px;
+@media only screen and (min-width: 1441px) and (max-width: 1688px) {
+  .other-course {
+    .other-course-title {
+      font-size: 90px;
     }
+  }
+}
 
-    .card-img-java {
-      height: 190px;
+@media only screen and (max-width: 1440px) {
+  .other-course {
+    .other-course-title {
+      font-size: 90px;
+    }
+  }
+
+  .bg-css,
+  .bg-java,
+  .bg-python {
+    border-radius: 50px 50px 0px 0px;
+    height: 218.64px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1339px) {
+  .other-course {
+    .other-course-title {
+      font-size: 75px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+  .other-course {
+    .other-course-title {
+      font-size: 64px;
     }
   }
 }
 
 @media only screen and (max-width: 1024px) {
-  .content {
-    .content-list-course {
-      .card-img-ruby {
-        height: 187px;
-      }
-      .font-ruby {
-        font-size: 15px;
-      }
+  .other-course {
+    .other-course-title {
+      font-size: 61px;
     }
   }
+}
 
-  .content-other-course {
+@media only screen and (min-width: 992px) and (max-width: 1018px) {
+  .other-course {
     .other-course-title {
-      .course-underline {
-        width: 56%;
-      }
+      font-size: 59px;
+    }
+  }
+}
+
+@media only screen and (min-width: 775px) and (max-width: 991px) {
+  .other-course {
+    .other-course-title {
+      font-size: 46px;
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 774px) {
+  .other-course {
+    .other-course-title {
+      font-size: 46px;
     }
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .content {
-    .content-list-course {
-      .card-img-ruby {
-        height: 187px;
-      }
-      .font-ruby {
-        font-size: 12px;
-      }
-
-      .font-text {
-        font-size: 12px;
-      }
-    }
-  }
-
-  .content-other-course {
+  .other-course {
     .other-course-title {
-      .course-underline {
-        width: 75%;
-      }
+      font-size: 46px;
     }
   }
 }
 
-@media only screen and (max-width: 648px) {
-  .content-other-course {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .other-course {
     .other-course-title {
-      font-size: 59px;
-
-      .course-underline {
-        width: 63%;
-      }
+      font-size: 34px;
     }
   }
 
-  .content {
-    .content-list-course {
-      .font-ruby {
-        font-size: 9px;
-      }
+  .bg-css,
+  .bg-java,
+  .bg-python {
+    height: 81.84px;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 575px) {
+  .other-course {
+    .other-course-title {
+      font-size: 25px;
+    }
+
+    .viewhapolearn {
+      font-size: 25px;
     }
   }
 }
 
-@media only screen and (max-width: 564px) {
- .content {
-   .content-list-course {
-     .font-ruby {
-       font-size: 15px;
-     }
-   }
- }
+@media only screen and (max-width: 425px) {
+  .other-course {
+    .other-course-title {
+      font-size: 25px;
+    }
 
- .content-other-course {
-   .other-course-end {
-     font-size: 35px;
-   }
- }
+    .viewhapolearn {
+      font-size: 25px;
+    }
+  }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 417px) {
+  .other-course {
+    .other-course-title {
+      font-size: 22px;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .other-course {
+    .other-course-title {
+      font-size: 22px;
+    }
+  }
 }

@@ -1,0 +1,109 @@
+.banner-bottom {
+  background: url("https://res.cloudinary.com/dei7q2lga/image/upload/v1647229357/group_7_idle59.png");
+  width: 100%;
+  height: 500px;
+  margin-top: 10%;
+
+  .btn-style {
+    margin-top: 3%;
+    margin-left: 38%;
+    border-radius: 36px;
+    width: 315px;
+    height: 64px;
+    background-color: white;
+    color: #90ab26;
+  }
+
+  .banner-bottom-text {
+    font-family: "UTM BryantLG";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 74px;
+    text-align: center;
+    color: white;
+    padding-top: 13%;
+    padding-left: 24%;
+    padding-right: 20%;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+  .banner-bottom {
+    .banner-bottom-text {
+      font-size: 62px;
+      padding-top: 8%;
+    }
+
+    .btn-style {
+      margin-left: 37%;
+      width: 446px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1228px) {
+  .banner-bottom {
+    .banner-bottom-text {
+      font-size: 50px;
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .banner-bottom {
+    .banner-bottom-text {
+      font-size: 37px;
+    }
+
+    .btn-style {
+      margin-left: 30%;
+    }
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .banner-bottom {
+    .banner-bottom-text {
+      font-size: 28px;
+    }
+
+    .btn-style {
+      margin-left: 25%;
+    }
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 576px) {
+  .banner-bottom {
+    height: 248px;
+
+    .banner-bottom-text {
+      font-size: 20px;
+      line-height: 36px;
+    }
+
+    .btn-style {
+      margin-left: 21%;
+      width: 255px;
+      height: 41px;
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+  .banner-bottom {
+    height: 252px;
+
+    .banner-bottom-text {
+      font-size: 18px;
+      line-height: 40px;
+    }
+
+    .btn-style {
+      margin-left: 18%;
+      width: 265px;
+      height: 43px;
+    }
+  }
+}
