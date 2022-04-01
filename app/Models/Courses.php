@@ -3,13 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
 class Courses extends Model
 {
     use HasFactory;
-    use softDeletes;
+    use SoftDeletes;
 
     protected $fillable = [
         'title',
@@ -23,7 +23,7 @@ class Courses extends Model
         return $this->belongsToMany(User::class, 'user_course', 'user_id', 'course_id');
     }
 
-    public function teachers()
+    public function teacherCourses()
     {
         return $this->belongsToMany(User::class, 'teacher_course');
     }

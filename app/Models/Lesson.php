@@ -3,13 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
     use HasFactory;
-    use softDeletes;
+    use SoftDeletes;
 
     protected $fillable = [
         'course_id',
