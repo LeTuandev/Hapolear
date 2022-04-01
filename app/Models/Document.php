@@ -18,8 +18,8 @@ class Document extends Model
         'type',
     ];
 
-    public function lessons()
+    public function lesson()
     {
-        return $this->belongsToMany(Lesson::class);
+        return $this->belongsTo(Lesson::class);
     }
 }

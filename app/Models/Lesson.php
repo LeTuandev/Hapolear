@@ -19,18 +19,18 @@ class Lesson extends Model
         'requirment',
     ];
 
-    public function user()
+    public function users()
     {
         return $this->belongsToMany(User::class, 'user_lesson', 'user_id', 'lesson_id');
     }
 
-    public function document()
+    public function documents()
     {
         return $this->hasMany(Document::class, 'lesson_id');
     }
 
-    public function courses()
+    public function course()
     {
-        return $this->belongsToMany(Courses::class);
+        return $this->belongsTo(Courses::class);
     }
 }

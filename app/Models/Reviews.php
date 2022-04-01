@@ -19,13 +19,13 @@ class Reviews extends Model
         'course_id',
     ];
 
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function courses()
+    public function course()
     {
-        return $this->belongsToMany(Courses::class);
+        return $this->belongsTo(Courses::class);
     }
 }
