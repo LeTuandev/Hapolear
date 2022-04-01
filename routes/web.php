@@ -15,11 +15,7 @@ use App\Models;
 */
 
 Route::get('/', function () {
-    $lesson = \App\Models\Lesson::find(1)['name'];
-    dd($lesson);
-    
-    //$users->lesson()->attach(1);
-    //return view('welcome');
+    return view('welcome');
 });
 
 Auth::routes();
