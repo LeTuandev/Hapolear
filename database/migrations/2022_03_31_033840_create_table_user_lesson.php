@@ -13,7 +13,7 @@ class CreateTableUserLesson extends Migration
      */
     public function up()
     {
-        Schema::create('user_lesson', function (Blueprint $table) {
+        Schema::create('user_lessons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('lesson_id');
             $table->integer('user_id');
