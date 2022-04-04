@@ -17,8 +17,8 @@ class CreateTableReviews extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->integer('course_id');
-            $table->integer('rate_star');
-            $table->integer('vote');
+            $table->string('rate_star')->nullable();
+            $table->string('vote')->nullable();
             $table->string('comment')->nullable();
             $table->softDeletes();
             $table->timestamps();

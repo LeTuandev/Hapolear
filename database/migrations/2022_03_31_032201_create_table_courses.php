@@ -16,7 +16,7 @@ class CreateTableCourses extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->string('description')->nullable();
             $table->integer('price')->nullable();
             $table->softDeletes();
