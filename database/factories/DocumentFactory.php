@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+
 use Illuminate\Support\Str;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -18,7 +19,7 @@ class DocumentFactory extends Factory
             'name' => $this->faker->name,
             'type' => Str::random(5),
             'img_path' => $this->faker->url,
-            'lesson_id' => $this->faker->numberBetween(1,200),
+            'lesson_id' => $this->faker->numberBetween(1, 200),
         ];
     }
 }
