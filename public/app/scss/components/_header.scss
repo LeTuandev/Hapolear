@@ -89,7 +89,7 @@
   }
 }
 
-@media (max-width: 1440px) {
+@media only screen and (max-width: 1440px) {
   .logo {
     margin-left: -13%;
     width: 464.16px;
@@ -106,6 +106,12 @@
     .menu-nav {
       font-size: 26px;
     }
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .logo {
+    margin-left: -8%;
   }
 }
 

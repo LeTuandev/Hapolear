@@ -1,5 +1,5 @@
 .other-course {
-  margin-top: 5%;
+  margin-top: 14%;
   width: 100%;
 
   .container {
@@ -7,17 +7,20 @@
   }
 
   .other-course-title {
-    font-family: "UTM BryantLG";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 80px;
-    line-height: 98px;
-    color: #11114e;
-    text-align: center;
-    border-bottom: 2px solid #b2d235;
-    border-bottom-width: thick;
-    width: 35%;
-    margin-left: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-family: "UTM BryantLG";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 98px;
+      color: #11114e;
+      border-bottom: 2px solid #b2d235;
+      border-bottom-width: thick;
+    }
   }
 
   .viewhapolearn {
@@ -28,26 +31,41 @@
     font-size: 40px;
     line-height: 49px;
     margin-top: 5%;
-   
+
     a {
       text-decoration: none;
       color: #90ab26;
     }
   }
 }
-.bg-css {
-  background-color: #3f6185;
-  height: 192.47px;
+
+.card-css,
+.card-python,
+.card-java {
+  display: flex;
+  justify-content: center;
+  border-radius: 15px 15px 0px 0px;
 }
 
-.bg-python {
-  background-color: red;
-  height: 192.47px;
+.card-css {
+  background-color: #24abe2;
 }
 
+.card-python {
+  background-color: #e14e40;
+}
+
+.card-java {
+  background-color: #1b75bb;
+}
+
+.bg-css,
+.bg-python,
 .bg-java {
-  background-color: #3f6185;
-  height: 192.47px;
+    width: 198px;
+    height: 194px;
+    display: flex;
+    align-items: center;
 }
 
 @media only screen and (max-width: 1920px) {
@@ -57,12 +75,12 @@
     }
   }
 
-  .bg-css,
-  .bg-java,
-  .bg-python {
-    border-radius: 50px 50px 0px 0px;
-    height: 258.84px;
-  }
+  //   .bg-css,
+  //   .bg-java,
+  //   .bg-python {
+  //     border-radius: 50px 50px 0px 0px;
+  //     height: 258.84px;
+  //   }
 }
 
 @media only screen and (min-width: 1441px) and (max-width: 1688px) {
@@ -80,12 +98,12 @@
     }
   }
 
-  .bg-css,
-  .bg-java,
-  .bg-python {
-    border-radius: 50px 50px 0px 0px;
-    height: 218.64px;
-  }
+  //   .bg-css,
+  //   .bg-java,
+  //   .bg-python {
+  //     border-radius: 50px 50px 0px 0px;
+  //     height: 218.64px;
+  //   }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1339px) {
