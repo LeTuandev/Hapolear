@@ -1,18 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="./images/ellipse_7.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="font/utm_bryantlg-webfont.woff2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
     <link rel="stylesheet" href="public/css/app.css">
 </head>
+
 <body>
-    <h1>hello world!</h1>
-    <div class="nav">
-        <div class="nav_item">1</div>
-        <div class="nav_item">2</div>
-        <div class="nav_item">3</div>
-        <div class="nav_item">4</div>
+    <header class="header">
+        <div class=" d-flex align-items-center justify-content-around container menu">
+            <div id="menuBar" class="fas fa-bars d-md-none menu-bar"></div>
+            <a href="#" class="logo"><img class="logo-hp" src="./images/hapo_learn.png" alt="HapoLearn Logo">
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#" class="menu-nav active">home</a>
+                <a href="#" class="menu-nav">all courses</a>
+                <a href="" class="menu-nav" id="loginRegister" data-toggle="modal"
+                    data-target="#loginModal">login/register</a>
+                <a href="#" class="menu-nav">profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="login" id="login">
+                        <div class="login-form">
+                            <div class="close-form" id="close" data-dismiss="modal"><i class="fa-solid fa-xmark"></i>
+                            </div>
+                            <div class="d-flex login-register">
+                                <a class="link-login" id="btnLogin">login</a>
+                                <a class="link-register" id="btnRegister">register</a>
+                            </div>
+                            <div class="col-md-12 form-lg">
+                                <div id="closeFormLogin">
+                                    <form action="#" method="post" id="loginForm">
+                                        <div class="form-group">
+                                            <label>Username:</label>
+                                            <input type="text" name="userName" class="form-control"
+                                                placeholder="User Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password:</label>
+                                            <input type="password" name="password" class="form-control"
+                                                placeholder="Password" />
+                                        </div>
+                                        <div class="checkbox-a">
+                                            <input type="checkbox" />
+                                            <label class="control control--checkbox mb-0"><span class="caption">Remember
+                                                    me</span></label>
+                                            <a href="#">Forgot password</a>
+                                        </div>
+                                        <button class="btn btn-success btn-login" type="submit">LOGIN</button>
+                                    </form>
+                                    <p class="line"><span>Login with</span></p>
+                                    <a class="login-gg" href="#"><i class="fa-brands fa-google-plus-g"></i>Google</a>
+                                    <a class="login-rg" href="#"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+                                </div>
+                                <div id="closeRegisterForm">
+                                    <form action="#" method="post" id="registerForm">
+                                        <div class="form-group">
+                                            <label>Username:</label>
+                                            <input type="text" name="userName" class="form-control"
+                                                placeholder="User Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email:</label>
+                                            <input type="email" name="email" class="form-control" placeholder="Email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password:</label>
+                                            <input type="password" name="password" class="form-control"
+                                                placeholder="Password" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Repeat Password::</label>
+                                            <input type="password" name="confirmPassword" class="form-control"
+                                                placeholder="Password" />
+                                        </div>
+                                        <button class="btn btn-success btn-login" type="submit">REGISTER</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="messenger">
+        <div class="messenger-content">
+            <div class="messenger-content-chat">
+                <div class="messenger-content-chat-admin">
+                    <div class="messenger-content-chat-admin-name">Hapolearn</div>
+                    <div class="messenger-content-chat-admin-text">
+                        <img src="./images/ellipse_7.png" alt="avatar admin">
+                        <div class="text">Hapolearn xin chào bạn. Bạn có cần chúng tôi hỗ trợ gì không?</div>
+                    </div>
+                </div>
+                <div class="messenger-content-chat-btn">
+                    <button class="btn btn-success style-btn"><i class="fa-brands fa-facebook-messenger"></i> đăng nhập
+                        vào messenger</button>
+                    <div class="messenger-content-chat-btn-des">Chat với Hapolearn trong Messenger</div>
+                </div>
+            </div>
+            <div class="messenger-content-close"><a href="#"><i class="fa-solid fa-circle-xmark"></i></a></div>
+        </div>
+    </div>
+    <div class="messenger-icon"><a href="#"><img src="./images/group_8.png" alt="messenger"></a></div>
+
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-content-text">
+                <p class="banner-title">Learn Anytime, Anywhere</p>
+                <div class="text-icon">
+                    <span class="text-icon-title">at HapoLearn</span>
+                    <img src="./images/group_6.png" class="text-icon-owl" alt="icon-owl">
+                    <span class="text-icon-title">!</span>
+                </div>
+                <div class="text-description">
+                    <p class="description">interactive lessons, "on the go" <br /> practice, peer support</p>
+                </div>
+                <button class="btn btn-success btn-style">start learning now!</button>
+            </div>
+            <div></div>
+        </div>
+        <div class="banner-gradient"></div>
+    </div>
+
+    <div class="list-course">
+        <div class="container list-course-container">
+            <div class="card-deck">
+                <div class="card text-center">
+                    <img class="card-img-top bg-html" src="./images/rectangle_7.png" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-title font-size-title">HTML/CSS/js Tutorial</p>
+                        <p class="card-text font-size-text">I knew hardly anything about HTML, JS, and CSS before
+                            entering New
+                            Media. I had coded quite a bit, but never
+                            touched anything in regards to web development.</p>
+                        <a href="#" class="btn  btn-course">Take this course</a>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <img class="card-img-top bg-laravel" src="./images/laravel_1_logo_black_and_white_1.png"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-title font-size-title">LARAVEL Tutorial</p>
+                        <p class="card-text font-size-text">I knew hardly anything about HTML, JS, and CSS before
+                            entering New
+                            Media. I had coded quite a bit, but never
+                            touched anything in regards to web development.</p>
+                        <a href="#" class="btn  btn-course">Take this course</a>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <img class="card-img-top bg-php" src="./images/rectangle_15.png" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-title font-size-title">LARAVEL Tutorial</p>
+                        <p class="card-text font-size-text">I knew hardly anything about HTML, JS, and CSS before
+                            entering New
+                            Media. I had coded quite a bit, but never
+                            touched anything in regards to web development.</p>
+                        <a href="#" class="btn  btn-course">Take this course</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="other-course">
+        <div class="other-course-title">
+           <p>Other course</p>
+        </div>
+        <div class="container list-course-container">
+            <div class="card-deck">
+                <div class="card text-center">
+                    <div class="card-css">
+                        <div class="bg-css">
+                            <img class="card-img-top" src="./images/css.png" alt="Card image cap">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title font-size-title">CSS tutorial</p>
+                        <p class="card-text font-size-text">I knew hardly anything about HTML, JS, CSS before entering
+                            media...</p>
+                        <a href="#" class="btn  btn-course">Take this course</a>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-python">
+                        <div class="bg-python">
+                            <img class="card-img-top" src="./images/group.png" alt="Card image cap">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title font-size-title">Ruby on rails tutorial</p>
+                        <p class="card-text font-size-text">I knew hardly anything about HTML, JS, CSS before entering
+                            media...</p>
+                        <a href="#" class="btn  btn-course">Take this course</a>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-java">
+                        <div class="bg-java">
+                            <img class="card-img-top " src="./images/java_1.png" alt="Card image cap">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title font-size-title">Java tutorial</p>
+                        <p class="card-text font-size-text">I knew hardly anything about HTML, JS, CSS before entering
+                            media...</p>
+                        <a href="#" class="btn  btn-course">Take this course</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="viewhapolearn"><a href="#">View All Our Course <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+
+    <div class="whyhapolearn">
+        <div class="whyhapolearn-top-img">
+            <img src="./images/mb_1.png" class="img-mb">
+        </div>
+        <div class="whyhapolearn-top-text">Why HapoLearn?</div>
+        <div class="whyhapolearn-bottom">
+            <div class="whyhapolearn-bottom-text">
+                <p class="whyhapolearn-bottom-text-list font-hapolearn"> Why HapoLearn?</p>
+                <p class="whyhapolearn-bottom-text-list"> <i class="fa-solid fa-circle-check"></i> interactive lessons,
+                    "on the go" practice, peer support</p>
+                <p class="whyhapolearn-bottom-text-list"> <i class="fa-solid fa-circle-check"></i> interactive lessons,
+                    "on the go" practice, peer support</p>
+                <p class="whyhapolearn-bottom-text-list"> <i class="fa-solid fa-circle-check"></i> interactive lessons,
+                    "on the go" practice, peer support</p>
+                <p class="whyhapolearn-bottom-text-list"> <i class="fa-solid fa-circle-check"></i> interactive lessons,
+                    "on the go" practice, peer support</p>
+            </div>
+            <div class="whyhapolearn-bottom-img">
+                <img src="./images/transparent.png" alt="macbook" class="img-mb-bot">
+            </div>
+        </div>
+    </div>
+
+    <div class="hapo-feedback">
+        <div class="container">
+            <div class="hapo-feedback-header">
+                <a class="feed-back-header-title">Feedback</a>
+                <p class="feed-back-header-content">What other students turned professionals have to say about
+                    us
+                    <br> after learning with us and reaching their goals
+                </p>
+            </div>
+            <div class="hapo-feed-back-body">
+                <div class="row slick">
+                    <div class="col-md-6 col-12">
+                        <div class="feed-back-up">
+                            <p class="feed-back-border"></p>
+                            <p class="feed-back-up-content">
+                                “A wonderful course on how to start. Eddie beautifully conveys all essentials of
+                                a
+                                becoming a good Angular developer. Very glad to have taken this course. Thank
+                                you
+                                Eddie Bryan.”
+                            </p>
+                        </div>
+                        <div class="feed-back-down">
+                            <div class="feed-back-img">
+                                <img src="./images/ellipse_1.png" alt="Hapo Avatar">
+                            </div>
+                            <div class="feed-back-down-content">
+                                <p class="feed-back-name">Tuan Tran Hoang</p>
+                                <p class="feed-back-span">PHP</p>
+                                <p class="feed-back-star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star star-special"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="feed-back-up">
+                            <p class="feed-back-border"></p>
+                            <p class="feed-back-up-content">
+                                “A wonderful course on how to start. Eddie beautifully conveys all essentials of
+                                a
+                                becoming a good Angular developer. Very glad to have taken this course. Thank
+                                you
+                                Eddie Bryan.”
+                            </p>
+                        </div>
+                        <div class="feed-back-down">
+                            <div class="feed-back-img">
+                                <img src="./images/ellipse_2.png" alt="Hapo Avatar">
+                            </div>
+                            <div class="feed-back-down-content">
+                                <p class="feed-back-name">Hoang Anh Nguyen</p>
+                                <p class="feed-back-span">PHP</p>
+                                <p class="feed-back-star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star star-special"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="feed-back-up">
+                            <p class="feed-back-border"></p>
+                            <p class="feed-back-up-content">
+                                “A wonderful course on how to start. Eddie beautifully conveys all essentials of
+                                a
+                                becoming a good Angular developer. Very glad to have taken this course. Thank
+                                you
+                                Eddie Bryan.”
+                            </p>
+                        </div>
+                        <div class="feed-back-down">
+                            <div class="feed-back-img">
+                                <img src="./images/ellipse_1.png" alt="Hapo Avatar">
+                            </div>
+                            <div class="feed-back-down-content">
+                                <p class="feed-back-name">Hoang Anh Nguyen</p>
+                                <p class="feed-back-span">PHP</p>
+                                <p class="feed-back-star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star star-special"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="feed-back-up">
+                            <p class="feed-back-border"></p>
+                            <p class="feed-back-up-content">
+                                “A wonderful course on how to start. Eddie beautifully conveys all essentials of
+                                a
+                                becoming a good Angular developer. Very glad to have taken this course. Thank
+                                you
+                                Eddie Bryan.”
+                            </p>
+                        </div>
+                        <div class="feed-back-down">
+                            <div class="feed-back-img">
+                                <img src="./images/ellipse_2.png" alt="Hapo Avatar" class="feed-back-img-avt">
+                            </div>
+                            <div class="feed-back-down-content">
+                                <p class="feed-back-name">Hoang Anh Nguyen</p>
+                                <p class="feed-back-span">PHP</p>
+                                <p class="feed-back-star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star star-special"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-bottom">
+        <div class="banner-bottom-text">Becoming a member of our growing community!</div>
+        <button class="btn btn-success btn-style">start learning now!</button>
+    </div>
+
+    <div class="statistic">
+        <div class="statistic-title other-course">
+            <div class="statistic-title-text other-course-title">
+                <p>Statistic</p>
+            </div>
+            <!-- <div class="statistic-underline course-underline"></div> -->
+        </div>
+        <div class="statistic-content">
+            <div class="statistic-content-item">
+                <div class="statistic-content-item-lesson">Courses</div>
+                <div class="statistic-content-item-coin">1,586</div>
+            </div>
+            <div class="statistic-content-item">
+                <div class="statistic-content-item-lesson">Lessons</div>
+                <div class="statistic-content-item-coin">2,689</div>
+            </div>
+            <div class="statistic-content-item">
+                <div class="statistic-content-item-lesson">Learners</div>
+                <div class="statistic-content-item-coin">16,882</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-top">
+            <div class="footer-left container">
+                <div class="footer-left-des">
+                    <div class="footer-left-des-img">
+                        <img src="./images/hapo_learn_white_1.png" alt="hapolearn footer" class="img-footer">
+                    </div>
+                    <div class="footer-left-des-text">interactive lessons, "on the go" practice, peer support</div>
+                </div>
+                <div class="footer-left-list">
+                    <div class="footer-left-list-item">Home</div>
+                    <div class="footer-left-list-item">Features</div>
+                    <div class="footer-left-list-item">courses</div>
+                    <div class="footer-left-list-item">blog</div>
+                </div>
+            </div>
+            <div class="footer-right container">
+                <div class="footer-right-list">
+                    <div class="footer-left-list-item">Contact</div>
+                    <div class="footer-left-list-item">Term of use</div>
+                    <div class="footer-left-list-item">FAQ</div>
+                </div>
+                <div class="footer-right-icon">
+                    <div class="footer-top-icon-fb">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="facebook.com/tuyen.dung.Haposoft">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="footer-top-icon-fb">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="facebook.com/tuyen.dung.Haposoft">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                    <div class="footer-top-icon-fb">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="facebook.com/tuyen.dung.Haposoft">
+                            <i class="fa-solid fa-message"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bot">@ 2020 Hapolearn, Inc. All rights reserved</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./slick/slick.js"></script>
+    <script src="./slick/slick.min.js"></script>
+    <script src="./public/js/app.js"></script>
 </body>
+
 </html>

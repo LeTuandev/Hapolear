@@ -1,21 +1,27 @@
-body {
-  width: 100%;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:ital,wght@1,100;1,300&display=swap");
+@import "./components/variables";
+@import "./components/_header";
+@import "./components/_banner";
+@import "./components/_courses";
+@import "./components/_othercourse";
+@import "./components/_whyhapolearn";
+@import "./components/_feedback";
+@import "./components/_bannerbottom";
+@import "./components/_statistic";
+@import "./components/_footer";
+@import "./components/_loginregister";
+@import "./components/_messenger";
+
+* {
   margin: 0;
-  font-size: 14px;
+  top: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1 {
-  background-color: red;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  
-
-  .nav_item {
-    width: 100%;
-    background-color: green;
-  }
+html {
+  scroll-padding-top: 60px;
 }
