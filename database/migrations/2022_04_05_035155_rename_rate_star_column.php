@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateFieldRateStarAndVoteTableReviews extends Migration
+class RenameRateStarColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,8 @@ class UpdateFieldRateStarAndVoteTableReviews extends Migration
     public function up()
     {
         Schema::table('reviews', function (Blueprint $table) {
-            $table->dropColumn(['rate_star','vote']);
-            $table->integer('star')->nullable();
-            $table->integer('votes')->nullable();
+            $table->renameColumn('rate_star', 'star');
+            $table->renameColumn('vote', 'votes');
         });
     }
 
@@ -28,8 +27,8 @@ class UpdateFieldRateStarAndVoteTableReviews extends Migration
     public function down()
     {
         Schema::table('reviews', function (Blueprint $table) {
-            Schema::dropColumn('rate_star');
-            Schema::dropColumn('vote');
+            $table->renameColumn('star', 'rate_star');
+            $table->renameColumn('votes', 'vote');
         });
     }
 }
