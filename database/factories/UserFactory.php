@@ -34,6 +34,7 @@ class UserFactory extends Factory
             'birth' => $this->faker->dateTime,
             'about' => $this->faker->text,
             'avatar' => $this->faker->imageUrl,
+            'job' => $this->faker->text,
         ];
     }
 

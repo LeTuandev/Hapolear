@@ -14,8 +14,8 @@ class ReviewsFactory extends Factory
     public function definition()
     {
         return [
-            'rate_star' => $this->faker->numberBetween(1, 200),
-            'vote' => $this->faker->numberBetween(1, 200),
+            'star' => $this->faker->numberBetween(1, 200),
+            'votes' => $this->faker->numberBetween(1, 200),
             'comment' => $this->faker->text,
             'user_id' => $this->faker->numberBetween(1, 200),
             'course_id' => $this->faker->numberBetween(1, 200),
