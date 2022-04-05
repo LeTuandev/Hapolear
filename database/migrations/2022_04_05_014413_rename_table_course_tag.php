@@ -23,6 +23,6 @@ class RenameTableCourseTag extends Migration
      */
     public function down()
     {
-        //
+        Schema::rename('course_tags', 'course_tag');
     }
 }

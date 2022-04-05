@@ -23,6 +23,6 @@ class RenameTableUserLesson extends Migration
      */
     public function down()
     {
-        //
+        Schema::rename('user_lessons', 'user_lesson');
     }
 }
