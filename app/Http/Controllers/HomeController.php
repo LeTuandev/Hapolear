@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Courses;
+use App\Models\Reviews;
+
 
 class HomeController extends Controller
 {
@@ -25,6 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $courses = Courses::all()->random(3);
-        return view('home', compact('courses'));
+        $reviews = Reviews::all()->random(4);
+        return view('home', compact('courses', 'reviews'));
     }
 }

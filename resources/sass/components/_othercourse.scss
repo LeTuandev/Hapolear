@@ -36,6 +36,12 @@
       text-decoration: none;
       color: #90ab26;
     }
+
+    &:hover {
+        a{
+            color: blue;
+        }
+    }
   }
 }
 

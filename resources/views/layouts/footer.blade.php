@@ -3,7 +3,7 @@
         <div class="footer-left container">
             <div class="footer-left-des">
                 <div class="footer-left-des-img">
-                    <img src="./images/hapo_learn_white_1.png" alt="hapolearn footer" class="img-footer">
+                    <img src="{{asset('images/hapo_learn_white_1.png')}}" alt="hapolearn footer" class="img-footer">
                 </div>
                 <div class="footer-left-des-text">interactive lessons, "on the go" practice, peer support</div>
             </div>

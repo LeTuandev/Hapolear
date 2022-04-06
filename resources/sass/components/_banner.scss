@@ -1,5 +1,5 @@
 .banner {
-  margin-top: 0;
+  margin-top: 2%;
   width: 100%;
 
   .banner-content {
@@ -34,10 +34,15 @@
       font-weight: bold;
       color: $color-title;
     }
+
+    .text-icon-owl {
+        margin-top: -2%;
+    }
   }
 
   .text-description {
     .description {
+        margin-top: 5%;
       font-size: 20px;
     }
   }
