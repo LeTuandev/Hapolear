@@ -1,0 +1,72 @@
+.messenger {
+  width: 360px;
+  position: fixed;
+  left: 900px;
+  top: 353px;
+  z-index: 1;
+  display: none;
+
+  .messenger-content {
+    display: flex;
+    background-color: white;
+    border-radius: 35px;
+    height: 190px;
+  }
+
+  .messenger-content-chat {
+    width: 160%;
+    margin-left: 10%;
+  }
+
+  .messenger-content-close {
+    width: 20%;
+  }
+
+  .messenger-content-chat-admin-name {
+    margin-left: 37px;
+  }
+
+  .messenger-content-chat-admin-text {
+    display: flex;
+    margin-left: -16px;
+
+    img {
+      width: 28px;
+      height: 28px;
+      margin-right: 8px;
+    }
+
+    .text {
+      background-color: rgba(192, 192, 192, 0.4);
+      border-radius: 18px;
+      font-size: 12px;
+      width: 259px;
+      text-align: center;
+    }
+  }
+
+  .style-btn {
+    margin-top: 11%;
+    margin-left: 9%;
+    border-radius: 20px;
+    background-color: blue;
+    padding: 7px;
+  }
+
+  .messenger-content-chat-btn-des {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 5%;
+  }
+}
+
+.messenger-icon {
+  position: fixed;
+  left: 1200px;
+  top: 551px;
+  z-index: 1;
+}
+
+.active {
+  display: block;
+}
