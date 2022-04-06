@@ -1,4 +1,7 @@
 {
-    "/app/public/js/app.js": "/app/public/js/app.js",
-    "/app/public/css/app.css": "/app/public/css/app.css"
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/images/ellipse_7.png": "/images/ellipse_7.png",
+    "/images/group_6.png": "/images/group_6.png",
+    "/images/Hapo_Learn.png": "/images/Hapo_Learn.png"
 }
