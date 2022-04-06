@@ -14,9 +14,9 @@ class CoursesFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title,
+            'title' => $this->faker->name,
             'description' => $this->faker->text,
-            'avatar' => $this->faker->imageUrl,
+            'thumbnail' => $this->faker->imageUrl,
             'price' => $this->faker->numerify,
         ];
     }
