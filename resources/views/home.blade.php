@@ -97,7 +97,6 @@
         <div class="hapo-feed-back-body">
             <div class="row slick">
                 @foreach ($reviews as $review)
-                {{dd($review->user->name)}}
                 <div class="col-6 col-12">
                     <div class="feed-back-up">
                         <p class="feed-back-border"></p>
