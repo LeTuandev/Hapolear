@@ -99,6 +99,7 @@
                 @foreach ($reviews as $review)
                 <div class="col-6 col-12">
                     <div class="feed-back-up">
+                        <div class="feed-back-sort-down"></div>
                         <p class="feed-back-border"></p>
                         <p class="feed-back-up-content">
                            {{$review->comment}}
