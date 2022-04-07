@@ -8,7 +8,6 @@ use App\Models\Reviews;
 use App\Models\Lesson;
 use App\Models\UserLesson;
 
-
 class HomeController extends Controller
 {
     /**
