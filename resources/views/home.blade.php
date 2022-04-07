@@ -101,32 +101,56 @@
                     <div class="feed-back-up">
                         <p class="feed-back-border"></p>
                         <p class="feed-back-up-content">
-                            “A wonderful course on how to start. Eddie beautifully conveys all essentials of
-                            a
-                            becoming a good Angular developer. Very glad to have taken this course. Thank
-                            you
-                            Eddie Bryan.”
+                           {{$review->comment}}
                         </p>
                     </div>
                     <div class="feed-back-down">
                         <div class="feed-back-img">
-                            <img src="./images/ellipse_1.png" alt="Hapo Avatar">
+                            <img src="{{$review->user->avatar}}" alt="Hapo Avatar">
                         </div>
                         <div class="feed-back-down-content">
-                            <p class="feed-back-name">Tuan Tran Hoang</p>
-                            <p class="feed-back-span">PHP</p>
+                            <p class="feed-back-name">{{$review->user->name}}</p>
+                            <p class="feed-back-span">{{$review->user->job}}</p>
                             <p class="feed-back-star">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star star-special"></i>
+                                @for ($i = 1; $i <= $review->votes; $i++)
+                                    <i class="fa-solid fa-star"></i>
+                                @endfor
+                                @for ($i = 5; $i > $review->votes; $i--)
+                                    <i class="fa-solid fa-star star-special"></i>
+                                @endfor
                             </p>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="banner-bottom">
+    <div class="banner-bottom-text">Becoming a member of our growing community!</div>
+    <button class="btn btn-success btn-style">start learning now!</button>
+</div>
+
+<div class="statistic">
+    <div class="statistic-title other-course">
+        <div class="statistic-title-text other-course-title">
+            <p>Statistic</p>
+        </div>
+    </div>
+    <div class="statistic-content">
+        <div class="statistic-content-item">
+            <div class="statistic-content-item-lesson">Courses</div>
+            <div class="statistic-content-item-coin">{{$coursesCounts}}</div>
+        </div>
+        <div class="statistic-content-item">
+            <div class="statistic-content-item-lesson">Lessons</div>
+            <div class="statistic-content-item-coin">{{$lessonsCounts}}</div>
+        </div>
+        <div class="statistic-content-item">
+            <div class="statistic-content-item-lesson">Learners</div>
+            <div class="statistic-content-item-coin">{{$learnerCounts}}</div>
         </div>
     </div>
 </div>
