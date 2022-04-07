@@ -15,10 +15,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
 
     /**
      * Show the application dashboard.
@@ -29,9 +25,9 @@ class HomeController extends Controller
     {
         $courses = Courses::all()->random(3);
         $reviews = Reviews::all()->random(4);
-        $coursesCounts = Courses::count();
-        $lessonsCounts = Lesson::count();
-        $learnerCounts = UserLesson::count();
-        return view('home', compact('courses', 'reviews', 'coursesCounts', 'lessonsCounts', 'learnerCounts'));
+        $countCourses = Courses::count();
+        $countLessons = Lesson::count();
+        $countLearners = UserLesson::count();
+        return view('home', compact('courses', 'reviews', 'countCourses', 'countLessons', 'countLearners'));
     }
 }

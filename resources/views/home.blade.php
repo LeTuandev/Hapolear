@@ -145,15 +145,15 @@
     <div class="statistic-content">
         <div class="statistic-content-item">
             <div class="statistic-content-item-lesson">Courses</div>
-            <div class="statistic-content-item-coin">{{$coursesCounts}}</div>
+            <div class="statistic-content-item-coin">{{$countCourses}}</div>
         </div>
         <div class="statistic-content-item">
             <div class="statistic-content-item-lesson">Lessons</div>
-            <div class="statistic-content-item-coin">{{$lessonsCounts}}</div>
+            <div class="statistic-content-item-coin">{{$countLessons}}</div>
         </div>
         <div class="statistic-content-item">
             <div class="statistic-content-item-lesson">Learners</div>
-            <div class="statistic-content-item-coin">{{$learnerCounts}}</div>
+            <div class="statistic-content-item-coin">{{$countLearners}}</div>
         </div>
     </div>
 </div>
