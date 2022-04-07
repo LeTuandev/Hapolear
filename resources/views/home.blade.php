@@ -105,8 +105,10 @@
                         </p>
                     </div>
                     <div class="feed-back-down">
-                        <div class="feed-back-img">
-                            <img src="{{$review->user->avatar}}" alt="Hapo Avatar">
+                        <div class="feed-back-avatar">
+                            <div class="feed-back-img">
+                                <img class="feed-back-img-avt" src="{{$review->user->avatar}}" alt="Hapo Avatar">
+                            </div>
                         </div>
                         <div class="feed-back-down-content">
                             <p class="feed-back-name">{{$review->user->name}}</p>

@@ -33,7 +33,7 @@
                 </div>
                 <div class="footer-top-icon-fb">
                     <a href="#" data-toggle="tooltip" data-placement="top" title="facebook.com/tuyen.dung.Haposoft">
-                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-envelope"></i>
                     </a>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 .login {
   width: 100%;
- 
+
 
   .login-form {
     position: relative;
@@ -146,4 +146,8 @@
 
 .active {
   display: block;
+}
+
+.modal-cursor {
+    cursor: pointer;
 }

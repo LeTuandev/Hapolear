@@ -10,9 +10,10 @@
       font-size: 60px;
       font-weight: 700;
       line-height: 90px;
-      color: #11114E;
-      border-bottom: 4px solid #B2D235;
+      color: #11114e;
+      border-bottom: 4px solid #b2d235;
       border-radius: 3px;
+      text-decoration: none;
     }
 
     .feed-back-header-content {
@@ -29,8 +30,8 @@
   .feed-back-up {
     box-sizing: border-box;
     border-radius: 15px;
-    border: 0.5px solid #E2E2E2;
-    background: #FFFFFF;
+    border: 0.5px solid #e2e2e2;
+    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +41,7 @@
     .feed-back-border {
       padding: 2px;
       height: 100px;
-      background: #D9DADC;
+      background: #d9dadc;
     }
 
     .feed-back-up-content {
@@ -57,10 +58,12 @@
     .feed-back-img {
       width: 60px;
       height: 60px;
+      display: flex;
     }
 
     .feed-back-img-avt {
       width: 100%;
+      border-radius: 50%;
     }
 
     .feed-back-down-content {
@@ -68,7 +71,7 @@
     }
 
     .feed-back-name {
-      color: #11114E;
+      color: #11114e;
       font-size: 16px;
       font-weight: bold;
       line-height: 25px;
@@ -83,7 +86,7 @@
     }
 
     .feed-back-star {
-      color: #F2C54F;
+      color: #f2c54f;
     }
 
     .star-special {

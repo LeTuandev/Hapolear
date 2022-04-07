@@ -4,8 +4,8 @@ $('.slick').slick({
   speed: 300,
   slidesToShow: 2,
   slidesToScroll: 1,
-  arrows:false,
-  autoplay:true,
+  arrows:true,
+  autoplay:false,
   responsive: [
     {
       breakpoint: 1024,
