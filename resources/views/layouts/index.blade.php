@@ -11,13 +11,9 @@
 
     <body>
         @include('layouts/header')
-
         @include('layouts/modal')
-
         @include('layouts/messenger')
-
         @yield('content')
-
         @include('layouts/footer')
     </body>
 

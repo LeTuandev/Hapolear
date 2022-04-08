@@ -3,11 +3,11 @@
 }
 
 .card {
-    border-radius: 15px;
+  border-radius: 15px;
 
-    .bg-img {
-        border-radius: 15px 15px 0px 0px;
-    }
+  .bg-img {
+    border-radius: 15px 15px 0px 0px;
+  }
 }
 
 .font-size-title {
@@ -20,15 +20,15 @@
 }
 
 .font-size-text {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 20px;
-    color: #505353;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  color: #505353;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .btn-course {

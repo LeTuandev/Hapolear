@@ -1,5 +1,4 @@
 @extends('layouts.index')
-
 @section('content')
 <div class="banner">
     <div class="banner-content">
@@ -7,7 +6,7 @@
             <p class="banner-title">Learn Anytime, Anywhere</p>
             <div class="text-icon">
                 <span class="text-icon-title">at HapoLearn</span>
-                <img src="{{asset('images/group_6.png')}}" class="text-icon-owl" alt="icon-owl">
+                <img src="{{ asset('images/group_6.png') }}" class="text-icon-owl" alt="icon-owl">
                 <span class="text-icon-title">!</span>
             </div>
             <div class="text-description">
@@ -26,7 +25,7 @@
             @foreach ($courses as $course)
             <div class="card text-center">
                 <div class="card-header-img">
-                    <img class="card-img-top bg-img" src="{{ $course->thumbnail}}" alt="Card image cap">
+                    <img class="card-img-top bg-img" src="{{ $course->thumbnail }}" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <p class="card-title font-size-title">{{ $course->title }}</p>
@@ -48,11 +47,11 @@
             @foreach ($courses as $course)
             <div class="card text-center">
                 <div class="card-header-img">
-                    <img class="card-img-top bg-img" src="{{$course->thumbnail}}" alt="Card image cap">
+                    <img class="card-img-top bg-img" src="{{ $course->thumbnail }}" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <p class="card-title font-size-title">{{$course->title}}</p>
-                    <p class="card-text font-size-text">{{$course->description}}</p>
+                    <p class="card-title font-size-title">{{ $course->title }}</p>
+                    <p class="card-text font-size-text">{{ $course->description }}</p>
                     <a href="#" class="btn  btn-course">Take this course</a>
                 </div>
             </div>
@@ -64,7 +63,7 @@
 
 <div class="whyhapolearn">
     <div class="whyhapolearn-top-img">
-        <img src="{{asset('images/mb_1.png')}}" class="img-mb">
+        <img src="{{ asset('images/mb_1.png') }}" class="img-mb">
     </div>
     <div class="whyhapolearn-top-text">Why HapoLearn?</div>
     <div class="whyhapolearn-bottom">
@@ -80,7 +79,7 @@
                 "on the go" practice, peer support</p>
         </div>
         <div class="whyhapolearn-bottom-img">
-            <img src="{{asset('images/transparent.png')}}" alt="macbook" class="img-mb-bot">
+            <img src="{{ asset('images/transparent.png') }}" alt="macbook" class="img-mb-bot">
         </div>
     </div>
 </div>
@@ -102,18 +101,18 @@
                         <div class="feed-back-sort-down"></div>
                         <p class="feed-back-border"></p>
                         <p class="feed-back-up-content">
-                           {{$review->comment}}
+                           {{ $review->comment }}
                         </p>
                     </div>
                     <div class="feed-back-down">
                         <div class="feed-back-avatar">
                             <div class="feed-back-img">
-                                <img class="feed-back-img-avt" src="{{$review->user->avatar}}" alt="Hapo Avatar">
+                                <img class="feed-back-img-avt" src="{{ $review->user->avatar }}" alt="Hapo Avatar">
                             </div>
                         </div>
                         <div class="feed-back-down-content">
-                            <p class="feed-back-name">{{$review->user->name}}</p>
-                            <p class="feed-back-span">{{$review->user->job}}</p>
+                            <p class="feed-back-name">{{ $review->user->name }}</p>
+                            <p class="feed-back-span">{{ $review->user->job }}</p>
                             <p class="feed-back-star">
                                 @for ($i = 1; $i <= $review->votes; $i++)
                                     <i class="fa-solid fa-star"></i>
@@ -145,15 +144,15 @@
     <div class="statistic-content">
         <div class="statistic-content-item">
             <div class="statistic-content-item-lesson">Courses</div>
-            <div class="statistic-content-item-coin">{{$countCourses}}</div>
+            <div class="statistic-content-item-coin">{{ $countCourses }}</div>
         </div>
         <div class="statistic-content-item">
             <div class="statistic-content-item-lesson">Lessons</div>
-            <div class="statistic-content-item-coin">{{$countLessons}}</div>
+            <div class="statistic-content-item-coin">{{ $countLessons }}</div>
         </div>
         <div class="statistic-content-item">
             <div class="statistic-content-item-lesson">Learners</div>
-            <div class="statistic-content-item-coin">{{$countLearners}}</div>
+            <div class="statistic-content-item-coin">{{ $countLearners }}</div>
         </div>
     </div>
 </div>
