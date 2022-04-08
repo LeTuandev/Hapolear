@@ -17,4 +17,4 @@
         <div class="messenger-content-close"><a href="#"><i class="fa-solid fa-circle-xmark"></i></a></div>
     </div>
 </div>
-<div class="messenger-icon"><a href="#"><img src="{{asset('images/group_8.png')}}" alt="messenger"></a></div>
+<div class="messenger-icon"><a href="#"><img src="{{ asset('images/group_8.png') }}" alt="messenger"></a></div>
