@@ -25,9 +25,9 @@ class HomeController extends Controller
     {
         $courses = Courses::all()->random(3);
         $reviews = Reviews::all()->random(4);
-        $countCourses = Courses::count();
-        $countLessons = Lesson::count();
-        $countLearners = UserLesson::count();
-        return view('index', compact('courses', 'reviews', 'countCourses', 'countLessons', 'countLearners'));
+        $courseCounts = Courses::count();
+        $lessonCounts = Lesson::count();
+        $learnerCounts = UserLesson::count();
+        return view('index', compact('courses', 'reviews', 'courseCounts', 'lessonCounts', 'learnerCounts'));
     }
 }
