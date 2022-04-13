@@ -1,0 +1,52 @@
+.statistic-content {
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.statistic-content-item-lesson {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 74px;
+  color: #505353;
+}
+
+.statistic-content-item-coin {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 74px;
+  color: #b2d235;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .statistic-content-item-lesson {
+    font-size: 52px;
+  }
+
+  .statistic-content-item-coin {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 648px) {
+  .statistic-content-item-lesson {
+    font-size: 44px;
+  }
+
+  .statistic-content-item-coin {
+    font-size: 46px;
+  }
+}
+
+@media only screen and (max-width: 564px) {
+  .statistic-content {
+    margin-top: 10%;
+    display: block;
+    margin-left: 36%;
+  }
+}

@@ -1,0 +1,42 @@
+.list-course {
+  margin-top: -7%;
+}
+
+ .card {
+    border-radius: 15px;
+
+  .bg-img {
+    border-radius: 15px 15px 0px 0px;
+  }
+}
+
+.font-size-title {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 37px;
+  color: #b2d235;
+}
+
+.font-size-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  color: #505353;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn-course {
+  border-radius: 22px;
+  color: white;
+  background-color: $color-title-course-green;
+
+  &:hover {
+    background-color: rgba(178, 210, 53, 0.4);
+  }
+}
