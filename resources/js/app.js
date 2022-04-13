@@ -3,3 +3,4 @@ require('slick-carousel');
 require('./slick');
 require('./login');
 require('./mess');
+require('./auth');

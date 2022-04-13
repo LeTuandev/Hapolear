@@ -13,16 +13,30 @@
                             </div>
                             <div class="col-md-12 form-lg">
                                 <div id="closeFormLogin">
-                                    <form action="#" method="post" id="loginForm">
+                                    <form action="{{ route('login') }}" method="post" id="loginForm">
+                                        @csrf
+                                        @if (session()->has('success'))
+                                            <div class="alert alert-success reg-success" id="message">{{ session()->get('success')}}</div>
+                                        @endif
                                         <div class="form-group">
                                             <label>Username:</label>
-                                            <input type="text" name="userName" class="form-control"
+                                            <input type="text" name="login_username" class="form-control @error('login_username')
+                                                is-invalid form-log
+                                            @enderror"
                                                 placeholder="User Name" />
+                                            @if ($errors->has('login_username'))
+                                            <p class="text-danger">{{ $errors->first('login_username') }}</p>
+                                            @endif
                                         </div>
                                         <div class="form-group">
                                             <label>Password:</label>
-                                            <input type="password" name="password" class="form-control"
+                                            <input type="password" name="login_password" class="form-control @error('login_password')
+                                                is-invalid form-log
+                                            @enderror"
                                                 placeholder="Password" />
+                                            @if ($errors->has('login_password'))
+                                            <p class="text-danger">{{ $errors->first('login_password') }}</p>
+                                            @endif
                                         </div>
                                         <div class="checkbox-a">
                                             <input type="checkbox" />
@@ -30,6 +44,9 @@
                                                     me</span></label>
                                             <a href="#">Forgot password</a>
                                         </div>
+                                        @if (session()->has('error'))
+                                            <div class="alert alert-danger log-error" id="error">{{ session()->get('error')}}</div>
+                                        @endif
                                         <button class="btn btn-success btn-login" type="submit">LOGIN</button>
                                     </form>
                                     <p class="line"><span>Login with</span></p>
@@ -37,25 +54,46 @@
                                     <a class="login-rg" href="#"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
                                 </div>
                                 <div id="closeRegisterForm">
-                                    <form action="#" method="post" id="registerForm">
+                                    <form action="{{ route('register') }}" method="post" id="registerForm">
+                                        @csrf
                                         <div class="form-group">
                                             <label>Username:</label>
-                                            <input type="text" name="userName" class="form-control"
+                                            <input type="text" name="register_username" class="form-control @error('register_username')
+                                                is-invalid form-reg
+                                            @enderror"
                                                 placeholder="User Name" />
+                                            @if ($errors->has('register_username'))
+                                            <p class="text-danger">{{ $errors->first('register_username') }}</p>
+                                            @endif
                                         </div>
                                         <div class="form-group">
                                             <label>Email:</label>
-                                            <input type="email" name="email" class="form-control" placeholder="Email" />
+                                            <input type="email" name="email" class="form-control @error('email')
+                                                is-invalid form-reg
+                                            @enderror" placeholder="Email" />
+                                            @if ($errors->has('email'))
+                                            <p class="text-danger">{{ $errors->first('email') }}</p>
+                                            @endif
                                         </div>
                                         <div class="form-group">
                                             <label>Password:</label>
-                                            <input type="password" name="password" class="form-control"
+                                            <input type="password" name="register_password" class="form-control @error('register_password')
+                                                is-invalid form-reg
+                                            @enderror"
                                                 placeholder="Password" />
+                                            @if ($errors->has('register_password'))
+                                            <p class="text-danger">{{ $errors->first('register_password') }}</p>
+                                            @endif
                                         </div>
                                         <div class="form-group">
                                             <label>Repeat Password::</label>
-                                            <input type="password" name="confirmPassword" class="form-control"
+                                            <input type="password" name="password_confirm" class="form-control @error('password')
+                                            is-invalid form-reg
+                                            @enderror"
                                                 placeholder="Password" />
+                                            @if ($errors->has('password_confirm'))
+                                            <p class="text-danger">{{ $errors->first('password_confirm') }}</p>
+                                            @endif
                                         </div>
                                         <button class="btn btn-success btn-login" type="submit">REGISTER</button>
                                     </form>

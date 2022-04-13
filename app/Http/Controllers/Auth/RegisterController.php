@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -36,10 +37,6 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
 
     /**
      * Get a validator for an incoming registration request.
@@ -69,5 +66,22 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function register(RegisterRequest $request)
+    {
+        $data = [
+            'name' => $request['register_username'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['register_password']),
+        ];
+
+        $user = User::create($data);
+
+        if($user) {
+            return redirect()->route('home')->with('success', 'successful account registration');
+        }
+
+        return redirect()->back();
     }
 }

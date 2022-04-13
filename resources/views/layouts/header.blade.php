@@ -6,9 +6,23 @@
         <nav class="nav" id="nav">
             <a href="#" class="menu-nav active">home</a>
             <a href="#" class="menu-nav">all courses</a>
-            <a href="" class="menu-nav" id="loginRegister" data-toggle="modal"
-                data-target="#loginModal">login/register</a>
-            <a href="#" class="menu-nav">profile</a>
+            @if (Auth::check())
+                <div class="dropdown">
+                    <a href="#" class="btn btn-success dropdown-toggle text-white text-auth" data-toggle="dropdown" aria-expanded="false" role="button" id="dropdownMenu">
+                        <i class="fas fa-user icon-auth"></i>{{Auth::user()->name}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                        <a href="#" class="dropdown-item">profile</a>
+                        <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+                            @csrf
+                            <button class="dropdown-item">logout</button>
+                        </form>
+                    </div>
+                </div>
+            @else
+                <a href="#" data-toggle="modal" data-target="#loginModal" class="menu-nav" id="loginRegister">login/register</a>
+                <a href="#" class="menu-nav">profile</a>
+            @endif
         </nav>
     </div>
 </header>
