@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    const ROLE_USER = 0;
     use HasFactory, Notifiable;
     use SoftDeletes;
 
