@@ -1,0 +1,138 @@
+.course-header {
+  margin-top: 5%;
+
+  .filter {
+    padding: 10px 30px;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border-radius: 9px;
+    border: 1px solid silver;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  .search {
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 10px 30px;
+    border-radius: 9px;
+    border: 1px solid silver;
+  }
+
+  .btn-search {
+    padding: 10px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #b2d235;
+    border-radius: 9px;
+    border: 1px solid silver;
+    font-weight: 700;
+    line-height: 22px;
+
+    &:hover {
+      background-color: #e6ff80;
+    }
+  }
+}
+
+.course {
+  display: flex;
+
+  .thumbnail-img {
+    display: flex;
+    width: 60px;
+    height: 60px;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.list-course-content {
+  margin-top: 5%;
+}
+
+.pad-course {
+  padding-right: 4%;
+  margin-top: 10%;
+
+  .bor-course {
+    background-color: white;
+    padding: 50px 20px;
+    margin-bottom: 10%;
+    border-radius: 20px;
+    box-shadow: 5px 5px rgb(150, 148, 148, 0.1);
+  }
+}
+
+.name {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 31px;
+  color: #505353;
+}
+
+.des {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #505050;
+  margin-top: 3%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn-more {
+  margin-top: 7%;
+  display: flex;
+  justify-content: flex-end;
+
+  .more {
+    text-decoration: none;
+    background-color: #b2d235;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 22px;
+
+    &:hover {
+      background-color: #e6ff80;
+    }
+  }
+}
+
+.course-items {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8%;
+
+  .learner-name,
+  .lesson-name,
+  .time-name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 31px;
+    color: #505353;
+  }
+
+  .learner-number,
+  .lesson-number,
+  .time-number {
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #b2d235;
+  }
+}
+
+.thumbnail {
+  margin-right: 5%;
+}

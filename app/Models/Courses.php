@@ -20,7 +20,7 @@ class Courses extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_course', 'user_id', 'course_id');
+        return $this->belongsToMany(User::class, 'user_courses', 'user_id', 'course_id');
     }
 
     public function courses()
@@ -40,6 +40,21 @@ class Courses extends Model
 
     public function lessons()
     {
-        return $this->hasMany(Lesson::class);
+        return $this->hasMany(Lesson::class, 'course_id');
+    }
+
+    public function getLearnerAttribute()
+    {
+        return $this->users()->count();
+    }
+
+    public function getLessonAttribute()
+    {
+        return $this->lessons()->count();
+    }
+
+    public function getTimeAttribute()
+    {
+        return $this->lessons()->sum('time');
     }
 }
