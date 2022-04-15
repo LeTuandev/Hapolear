@@ -24,17 +24,17 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'login_username' => 'required',
-            'login_password' => 'required|min:5',
+            'username' => 'required',
+            'password' => 'required|min:5',
         ];
     }
 
     public function messages()
     {
         return [
-            'login_username.required' => 'username cannot be empty',
-            'login_password.required' => 'password cannot be empty',
-            'login_password.min' => 'password not enough',
+            'username.required' => 'username cannot be empty',
+            'password.required' => 'password cannot be empty',
+            'password.min' => 'password not enough',
         ];
     }
 }
