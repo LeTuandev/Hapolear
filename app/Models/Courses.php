@@ -61,40 +61,39 @@ class Courses extends Model
 
     public function scopeSearch($query, $data)
     {
-        if(isset($data['key'])) {
+        if(isset($data['key'])){
             $query->where('title', 'LIKE', '%' . $data['key'] . '%')->orWhere('description', 'LIKE', '%' . $data['key'] . '%');
         }
 
-        if(isset($data['created_time'])) {
+        if(isset($data['created_time'])){
             $query->orderBy('created_at', $data['created_time']);
         } else {
             $query->orderBy('id', config('filter.sort.desc'));
         }
 
-        if(isset($data['teacher'])) {
+        if(isset($data['teacher'])){
             $query->whereHas('teachers', function ($subquery) use ($data) {
                 $subquery->where('user_id', $data['teacher']);
             });
         }
 
-        if(isset($data['learner'])) {
+        if(isset($data['learner'])){
             $query->withCount('users')->orderBy('users_count', $data['learner']);
         }
 
-        if(isset($data['learn_time'])) {
+        if(isset($data['learn_time'])){
             $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['learn_time']);
         }
 
-        if(isset($data['lesson'])) {
+        if(isset($data['lesson'])){
             $query->withCount('lessons')->orderBy('lessons_count', $data['lesson']);
         }
 
-        if(isset($data['tag'])) {
+        if(isset($data['tag'])){
             $query->whereHas('tags', function ($subquery) use ($data) {
                 $subquery->where('tag_id', $data['tag']);
             });
         }
-
         return $query;
     }
 }
