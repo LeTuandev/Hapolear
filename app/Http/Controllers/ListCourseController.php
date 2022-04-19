@@ -18,6 +18,6 @@ class ListCourseController extends Controller
         $teachers = User::teacher()->get();
         $tag = Tags::all();
         $courses = Courses::search($request->all())->paginate(config('filter.item_page'));
-        return view('courses.index', compact('courses', 'request', 'teachers'));
+        return view('courses.index', compact('courses', 'request', 'teachers', 'tag'));
     }
 }
