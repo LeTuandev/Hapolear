@@ -20,4 +20,9 @@ class CourseController extends Controller
         $courses = Courses::search($request->all())->paginate(config('filter.item_page'));
         return view('courses.index', compact('courses', 'request', 'teachers', 'tag'));
     }
+
+    public function show($id)
+    {
+        return view('courses.course_detail');
+    }
 }
