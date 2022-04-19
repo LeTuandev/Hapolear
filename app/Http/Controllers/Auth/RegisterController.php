@@ -80,7 +80,7 @@ class RegisterController extends Controller
         $user = User::create($data);
 
         if ($user) {
-            return redirect()->route('home')->with('success', 'successful account registration');
+            return redirect()->route('index')->with('success', 'successful account registration');
         }
 
         return redirect()->back();

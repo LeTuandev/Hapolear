@@ -40,7 +40,7 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($data)) {
-            return redirect()->route('home');
+            return redirect()->route('index');
         } else {
             return redirect()->back()->with('error', 'username or password is not incorrect');
         }
@@ -49,6 +49,6 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->route('home');
+        return redirect()->route('index');
     }
 }

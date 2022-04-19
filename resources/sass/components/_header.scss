@@ -1,8 +1,8 @@
 .header {
-    box-shadow: $box-shadow;
-    background: white;
-    height: 120px;
-    width: 100%;
+  box-shadow: $box-shadow;
+  background: white;
+  height: 120px;
+  width: 100%;
 }
 
 .menu {
@@ -48,6 +48,11 @@
       align-items: center;
     }
   }
+
+  .active {
+    background: $color-light-green;
+    color: white;
+  }
 }
 
 .menu-bar {
@@ -63,5 +68,5 @@
 }
 
 .modal-cursor {
-    cursor: pointer;
+  cursor: pointer;
 }

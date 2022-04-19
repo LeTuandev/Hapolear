@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     const ROLE_USER = 0;
+    const ROLE_TEACHER = 1;
     use HasFactory, Notifiable;
     use SoftDeletes;
 
@@ -29,6 +30,8 @@ class User extends Authenticatable
         'address',
         'about',
         'birth',
+        'job',
+        'role',
     ];
 
     /**
@@ -68,5 +71,10 @@ class User extends Authenticatable
     public function reviews()
     {
         return $this->hasMany(Reviews::class, 'reviews');
+    }
+
+    public function scopeTeacher($query)
+    {
+        return $query->where('role', self::ROLE_TEACHER);
     }
 }

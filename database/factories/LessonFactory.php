@@ -19,6 +19,7 @@ class LessonFactory extends Factory
             'thumbnail' => $this->faker->imageUrl,
             'requirment' => $this->faker->text,
             'name' => $this->faker->name,
+            'time' => $this->faker->numerify,
         ];
     }
 }
