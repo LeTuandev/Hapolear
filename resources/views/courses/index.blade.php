@@ -18,7 +18,7 @@
                     checked
                 @endif>
                 <label for="old">cũ nhất</label>
-                <select class="teacher" name="teacher">
+                <select class="select2" name="teacher">
                     <option value="{{ $request->teacher }} ">teacher</option>
                     @foreach ($teachers as $teacher)
                     <option value="{{ $teacher->id }}" @if ($request->teacher == $teacher->id)
@@ -26,7 +26,7 @@
                     @endif>{{ $teacher->name }}</option>
                     @endforeach
                 </select>
-                <select class="teacher" name="learner">
+                <select class="select2" name="learner">
                     <option value="{{ $request->learner }}">số người học</option>
                     <option value="{{ config('filter.sort.asc') }}" @if ($request->learner == config('filter.sort.asc'))
                         selected
@@ -35,7 +35,7 @@
                         selected
                     @endif>giảm dần</option>
                 </select>
-                <select class="teacher" name="learn_time">
+                <select class="select2" name="learn_time">
                     <option value="{{ $request->learn_time }}">thời gian học</option>
                     <option value="{{ config('filter.sort.asc') }}" @if ($request->learn_time == config('filter.sort.asc'))
                         selected
@@ -44,7 +44,7 @@
                         selected
                     @endif>giảm dần</option>
                 </select>
-                <select class="teacher" name="lesson">
+                <select class="select2" name="lesson">
                     <option value="{{ $request->lesson }}">số bài học</option>
                     <option value="{{ config('filter.sort.asc') }}" @if ($request->lesson == config('filter.sort.asc'))
                         selected
@@ -53,7 +53,7 @@
                         selected
                     @endif>giảm dần</option>
                 </select>
-                <select class="teacher" name="tag">
+                <select class="select2" name="tag">
                     <option value="{{ $request->tag }}">tags</option>
                     @foreach ($teachers as $tag)
                     <option value="{{ $tag->id }}" @if ($request->tag == $tag->id)

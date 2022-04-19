@@ -1,4 +1,4 @@
 $(document).ready(function () {
-  $('.teacher').select2({
+  $('.select2').select2({
   });
 });
