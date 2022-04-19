@@ -1,7 +1,6 @@
 @if ($paginator->hasPages())
     <nav class="nav-pag">
         <ul class="pagination">
-            {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
                 <li class="disabled pag-css" aria-disabled="true">
                     <span aria-hidden="true"><i class="fa-solid fa-arrow-left"></i></span>
@@ -12,9 +11,7 @@
                 </li>
             @endif
 
-            {{-- Pagination Elements --}}
             @foreach ($elements as $element)
-                {{-- Array Of Links --}}
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
@@ -26,7 +23,6 @@
                 @endif
             @endforeach
 
-            {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
                 <li class="pag-css">
                     <a href="{{ $paginator->nextPageUrl() }}"><i class="fa-solid fa-arrow-right"></i></a>
@@ -39,4 +35,3 @@
         </ul>
     </nav>
 @endif
-

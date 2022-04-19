@@ -70,7 +70,7 @@
                     @include('courses.list_course')
                 @endforeach
             </div>
-            {{ $courses->links('paginate.custompaginate') }}
+            {{ $courses->links('paginate.custom_paginate') }}
             @if (count($courses->items()) == 0)
                 <div>NOT COURSE FOUND</div>
             @endif
