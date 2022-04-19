@@ -19,9 +19,9 @@
                 @endif>
                 <label for="old">cũ nhất</label>
                 <select class="teacher" name="teacher">
-                    <option value="{{ $request->teacher }} selected">teacher</option>
+                    <option value="{{ $request->teacher }} ">teacher</option>
                     @foreach ($teachers as $teacher)
-                    <option value="{{ $teacher->id }}" @if ($request->teacher)
+                    <option value="{{ $teacher->id }}" @if ($request->teacher == $teacher->id)
                         selected
                     @endif>{{ $teacher->name }}</option>
                     @endforeach
@@ -54,9 +54,9 @@
                     @endif>giảm dần</option>
                 </select>
                 <select class="tags" name="tag">
-                    <option value="{{ $request->tag }} selected">tags</option>
+                    <option value="{{ $request->tag }}">tags</option>
                     @foreach ($teachers as $tag)
-                    <option value="{{ $tag->id }}" @if ($request->tag)
+                    <option value="{{ $tag->id }}" @if ($request->tag == $tag->id)
                         selected
                     @endif>{{ $tag->name }}</option>
                     @endforeach

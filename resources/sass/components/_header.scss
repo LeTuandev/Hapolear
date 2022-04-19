@@ -48,6 +48,11 @@
       align-items: center;
     }
   }
+
+  .active {
+    background: $color-light-green;
+    color: white;
+  }
 }
 
 .menu-bar {

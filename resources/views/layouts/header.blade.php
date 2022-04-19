@@ -1,11 +1,11 @@
 <header class="header">
     <div class=" d-flex align-items-center justify-content-around container menu">
         <div id="menuBar" class="fas fa-bars d-md-none menu-bar"></div>
-        <a href="#" class="logo"><img class="logo-hp" src="{{ asset('images/hapo_learn.png') }}" alt="HapoLearn Logo">
+        <a href="{{ route('index') }}" class="logo"><img class="logo-hp" src="{{ asset('images/hapo_learn.png') }}" alt="HapoLearn Logo">
         </a>
         <nav class="nav" id="nav">
-            <a href="{{ route('index') }}" class="menu-nav">home</a>
-            <a href="{{ route('courses.index') }}" class="menu-nav">all courses</a>
+            <a href="{{ route('index') }}" class="{{ '/' == request()->path() ? 'active' : ''}} menu-nav">home</a>
+            <a href="{{ route('courses.index') }}" class="{{ 'courses' == request()->path() ? 'active' : ''}} menu-nav">all courses</a>
             @if (Auth::check())
                 <div class="dropdown">
                     <a href="#" class="btn btn-success dropdown-toggle text-white text-auth" data-toggle="dropdown" aria-expanded="false" role="button" id="dropdownMenu">
