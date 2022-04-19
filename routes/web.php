@@ -16,11 +16,7 @@ use App\Http\Controllers\ListCourseController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/listcourse', [ListCourseController::class, 'index'])->name('listcourse');
+Route::resource('', HomeController::class);
+Route::resource('courses', ListCourseController::class);

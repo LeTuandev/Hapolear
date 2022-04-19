@@ -35,6 +35,7 @@ class UserFactory extends Factory
             'about' => $this->faker->text,
             'avatar' => $this->faker->imageUrl,
             'job' => Str::random(10),
+            'role' => $this->faker->numberBetween(0, 1),
         ];
     }
 
