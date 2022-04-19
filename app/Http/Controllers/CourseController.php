@@ -11,7 +11,7 @@ use App\Models\Courses;
 use App\Models\User;
 use App\Models\Tags;
 
-class ListCourseController extends Controller
+class CourseController extends Controller
 {
     public function index(Request $request)
     {

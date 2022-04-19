@@ -68,7 +68,7 @@ class Courses extends Model
         if (isset($data['created_time'])) {
             $query->orderBy('created_at', $data['created_time']);
         } else {
-            $query->orderBy('id', config('filter.sort.desc'));
+            $query->orderBy('created_at', config('filter.sort.desc'));
         }
 
         if (isset($data['teacher'])) {

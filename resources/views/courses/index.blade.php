@@ -3,9 +3,9 @@
     <div class="container course-header">
         <form class="form" method="GET" action="{{ route('courses.index') }}">
             <div class="list-course-header">
-                    <button class="btn filter" type="button"><i class="fa-solid fa-sliders"></i>filter</button>
-                    <div class="list-course-search"><input type="text" placeholder="search..." class="search" name="key" value="{{ $request->key }}"><i class="fa-solid fa-magnifying-glass search-icon"></i></div>
-                    <button class="btn btn-search" type="submit">tìm kiếm</button>
+                <button class="btn filter" type="button"><i class="fa-solid fa-sliders"></i>filter</button>
+                <div class="list-course-search"><input type="text" placeholder="search..." class="search" name="key" value="{{ $request->key }}"><i class="fa-solid fa-magnifying-glass search-icon"></i></div>
+                <button class="btn btn-search" type="submit">tìm kiếm</button>
             </div>
             <div class="show-filter">
                 <p class="text-filter">Lọc theo</p>
@@ -26,7 +26,7 @@
                     @endif>{{ $teacher->name }}</option>
                     @endforeach
                 </select>
-                <select class="learners" name="learner">
+                <select class="teacher" name="learner">
                     <option value="{{ $request->learner }}">số người học</option>
                     <option value="{{ config('filter.sort.asc') }}" @if ($request->learner == config('filter.sort.asc'))
                         selected
@@ -35,7 +35,7 @@
                         selected
                     @endif>giảm dần</option>
                 </select>
-                <select class="times" name="learn_time">
+                <select class="teacher" name="learn_time">
                     <option value="{{ $request->learn_time }}">thời gian học</option>
                     <option value="{{ config('filter.sort.asc') }}" @if ($request->learn_time == config('filter.sort.asc'))
                         selected
@@ -44,7 +44,7 @@
                         selected
                     @endif>giảm dần</option>
                 </select>
-                <select class="lessons" name="lesson">
+                <select class="teacher" name="lesson">
                     <option value="{{ $request->lesson }}">số bài học</option>
                     <option value="{{ config('filter.sort.asc') }}" @if ($request->lesson == config('filter.sort.asc'))
                         selected
@@ -53,7 +53,7 @@
                         selected
                     @endif>giảm dần</option>
                 </select>
-                <select class="tags" name="tag">
+                <select class="teacher" name="tag">
                     <option value="{{ $request->tag }}">tags</option>
                     @foreach ($teachers as $tag)
                     <option value="{{ $tag->id }}" @if ($request->tag == $tag->id)

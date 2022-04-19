@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ListCourseController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,6 @@ use App\Http\Controllers\ListCourseController;
 |
 */
 
-Auth::routes();
-
 Route::resource('', HomeController::class);
-Route::resource('courses', ListCourseController::class);
+Route::resource('courses', CourseController::class);
+Auth::routes();
