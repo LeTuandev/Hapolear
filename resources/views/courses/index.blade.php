@@ -1,7 +1,7 @@
 @extends('layouts.index')
 @section('content')
     <div class="container course-header">
-        <form class="form" method="GET" action="{{ route('courses.index')}}">
+        <form class="form" method="GET" action="{{ route('courses.index') }}">
             <div class="list-course-header">
                     <button class="btn filter" type="button"><i class="fa-solid fa-sliders"></i>filter</button>
                     <div class="list-course-search"><input type="text" placeholder="search..." class="search" name="key" value="{{ $request->key }}"><i class="fa-solid fa-magnifying-glass search-icon"></i></div>
@@ -36,7 +36,7 @@
                     @endif>giảm dần</option>
                 </select>
                 <select class="times" name="learn_time">
-                    <option value="{{ $request->learn_time}}">thời gian học</option>
+                    <option value="{{ $request->learn_time }}">thời gian học</option>
                     <option value="{{ config('filter.sort.asc') }}" @if ($request->learn_time == config('filter.sort.asc'))
                         selected
                     @endif>tăng dần</option>
@@ -45,7 +45,7 @@
                     @endif>giảm dần</option>
                 </select>
                 <select class="lessons" name="lesson">
-                    <option value="{{ $request->lesson}}">số bài học</option>
+                    <option value="{{ $request->lesson }}">số bài học</option>
                     <option value="{{ config('filter.sort.asc') }}" @if ($request->lesson == config('filter.sort.asc'))
                         selected
                     @endif>tăng dần</option>
