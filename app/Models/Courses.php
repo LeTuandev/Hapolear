@@ -106,4 +106,10 @@ class Courses extends Model
         }
         return $query;
     }
+
+    public function scopeTotalCourse($query)
+    {
+        $query->take(config('filter.item_other_course'));
+        return $query;
+    }
 }

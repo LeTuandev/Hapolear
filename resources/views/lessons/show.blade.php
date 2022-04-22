@@ -42,7 +42,7 @@
                             </div>
                             <div class="course-des-content-item mt-3 d-flex">
                                 <p class="tag-lesson">tags:</p>
-                                @foreach ($courses->tags as $key=>$tag)
+                                @foreach ($courses->tags as $key => $tag)
                                 <a href="{{ $tag }}" class="tag-link">{{ '#' . $key }}</a>
                                 @endforeach
                             </div>

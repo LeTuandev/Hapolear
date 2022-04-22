@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="btn-more">
-            <a href="{{ route('courses.show', $course->id ) }}" type="submit" class="more">more</a>
+            <a href="{{ route('courses.show', $course->id) }}" type="submit" class="more">more</a>
         </div>
         <div class="course-items">
             <div class="learner">

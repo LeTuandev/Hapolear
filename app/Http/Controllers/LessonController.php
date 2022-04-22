@@ -11,7 +11,7 @@ class LessonController extends Controller
     public function show($courseId, $lessonId)
     {
         $courses = Courses::find($courseId);
-        $otherCourses = Courses::all()->random(config('filter.item_other_course'));
+        $otherCourses = Courses::totalCourse()->get();
         $lessons = Lesson::find($lessonId);
         $programs = $lessons->documents()->get();
         return view('lessons.show', compact('courses', 'lessons', 'otherCourses', 'programs'));

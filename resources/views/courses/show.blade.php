@@ -109,7 +109,7 @@
                     <div class="course-des-content-item mt-3">
                         <i class="fa-solid fa-key"></i>
                         <p class="m-lf">tags:</p>
-                        @foreach ($courses->tags as $key=>$tag)
+                        @foreach ($courses->tags as $key => $tag)
                         <a href="{{ $tag }}">{{ '#' . $key }}</a>
                         @endforeach
                     </div>
