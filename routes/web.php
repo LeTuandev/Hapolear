@@ -6,7 +6,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
