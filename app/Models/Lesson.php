@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Lesson extends Model
 {
@@ -29,8 +30,17 @@ class Lesson extends Model
         return $this->hasMany(Document::class, 'lesson_id');
     }
 
-    public function course()
+    public function courses()
     {
         return $this->belongsTo(Courses::class);
+    }
+
+    public function scopeLessonOfCourse($query, $data, $id)
+    {
+        $query->where('course_id', $id)->orderBy('created_at', config('filter.sort.asc'));
+        if (isset($data['key'])) {
+            $query->where('name', 'LIKE', '%' . $data['key'] . '%');
+        }
+        return $query;
     }
 }

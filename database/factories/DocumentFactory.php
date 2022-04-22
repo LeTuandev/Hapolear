@@ -18,7 +18,7 @@ class DocumentFactory extends Factory
         return [
             'name' => $this->faker->name,
             'type' => Str::random(5),
-            'img_path' => $this->faker->url,
+            'img_path' => $this->faker->imageUrl(),
             'lesson_id' => $this->faker->numberBetween(1, 200),
         ];
     }
