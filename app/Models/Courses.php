@@ -107,9 +107,9 @@ class Courses extends Model
         return $query;
     }
 
-    public function scopeTotalCourse($query)
+    public function scopeOtherCourse($query)
     {
-        $query->take(config('filter.item_other_course'));
-        return $query;
+         $query->inRandomOrder()->limit(config('filter.item_other_course'));
+         return $query;
     }
 }

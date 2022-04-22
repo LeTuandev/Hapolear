@@ -35,7 +35,7 @@ class Lesson extends Model
         return $this->belongsTo(Courses::class);
     }
 
-    public function scopeLessonOfCourse($query, $data, $id)
+    public function scopeSearch($query, $data, $id)
     {
         $query->where('course_id', $id)->orderBy('created_at', config('filter.sort.asc'));
         if (isset($data['key'])) {

@@ -56,11 +56,11 @@
                                 @foreach ($teachers as $teacher)
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <div class="d-flex teacher-img mt-4"><img src="{{ $teacher->avatar }}" alt="" class="w-100 rounded-circle"></div>
+                                        <div class="d-flex teacher-img mt-4"><img src="{{ $teachers->avatar }}" alt="" class="w-100 rounded-circle"></div>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="mt-5">
-                                            <div>{{ $teacher->name }}</div>
+                                            <div>{{ $teachers->name }}</div>
                                             <div>
                                                 <a href=""><i class="fa-brands fa-google-plus"></i></a>
                                                 <a href=""><i class="fa-brands fa-facebook"></i></a>
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-12">{{ $teacher->about }}</div>
+                                    <div class="col-md-12">{{ $teachers->about }}</div>
                                 </div>
                                 @endforeach
                             </div>
