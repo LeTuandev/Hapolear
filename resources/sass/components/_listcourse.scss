@@ -92,11 +92,7 @@
   font-size: 18px;
   line-height: 25px;
   color: #505050;
-  margin-top: 3%;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  margin-left: 20%;
 }
 
 .btn-more {
@@ -156,7 +152,7 @@
   padding: 10px 10px;
   border: 1px solid silver;
 
-  .select2{
+  .select2 {
     padding: 5px 2px;
     width: 163px;
     margin-left: 2%;

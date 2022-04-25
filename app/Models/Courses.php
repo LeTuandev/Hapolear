@@ -26,7 +26,7 @@ class Courses extends Model
 
     public function teachers()
     {
-        return $this->belongsToMany(User::class, 'teacher_courses', 'user_id', 'course_id');
+        return $this->belongsToMany(User::class, 'teacher_courses', 'course_id', 'user_id');
     }
 
     public function reviews()
@@ -57,6 +57,16 @@ class Courses extends Model
     public function getTimeAttribute()
     {
         return $this->lessons()->sum('time');
+    }
+
+    public function getTagsAttribute()
+    {
+        return $this->tags()->pluck('link', 'name');
+    }
+
+    public function getCoursePriceAttribute()
+    {
+        return $this->price = 0 ? 'free' : number_format($this->price) .'$';
     }
 
     public function scopeSearch($query, $data)
@@ -95,5 +105,11 @@ class Courses extends Model
             });
         }
         return $query;
+    }
+
+    public function scopeOtherCourse($query)
+    {
+         $query->inRandomOrder()->limit(config('filter.item_other_course'));
+         return $query;
     }
 }

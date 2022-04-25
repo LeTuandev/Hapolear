@@ -18,6 +18,7 @@ class CoursesFactory extends Factory
             'description' => $this->faker->text,
             'thumbnail' => $this->faker->imageUrl,
             'price' => $this->faker->numerify,
+            'requirement' => $this->faker->text,
         ];
     }
 }

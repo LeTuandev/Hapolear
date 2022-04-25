@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LessonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,5 @@ use App\Http\Controllers\CourseController;
 
 Route::resource('', HomeController::class);
 Route::resource('courses', CourseController::class);
+Route::resource('courses.lessons', LessonController::class);
 Auth::routes();
