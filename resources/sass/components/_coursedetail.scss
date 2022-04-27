@@ -136,17 +136,17 @@
 }
 
 .course-padd {
-  padding: 5px 5px;
-
-  .course-bot {
-    border-bottom: 1px solid #e2e0e0;
-    padding-bottom: 3%;
-  }
+  margin-top: 0;
 
   .btn-mar {
     margin-left: 0px;
   }
 }
+
+.course-bot {
+    border-bottom: 1px solid #e2e0e0;
+    padding-bottom: 3%;
+  }
 
 .course-des-other-course {
   background-color: white;

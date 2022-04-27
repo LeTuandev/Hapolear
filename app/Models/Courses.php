@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Courses extends Model
 {
@@ -21,7 +22,7 @@ class Courses extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_courses', 'user_id', 'course_id');
+        return $this->belongsToMany(User::class, 'user_courses', 'user_id', 'course_id')->withPivot('status')->withTimestamps();
     }
 
     public function teachers()
@@ -67,6 +68,16 @@ class Courses extends Model
     public function getCoursePriceAttribute()
     {
         return $this->price = 0 ? 'free' : number_format($this->price) .'$';
+    }
+
+    public function getStatusCourseAttribute()
+    {
+        return $this->users()->pluck('status');
+    }
+
+    public function getLessonById($data)
+    {
+        return $this->lessons()->where('id', $data)->first();
     }
 
     public function scopeSearch($query, $data)
