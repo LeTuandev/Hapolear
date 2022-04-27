@@ -13,6 +13,13 @@
         <div class="col-md-8">
             <div class="course-detail-intro">
                 <img src="{{ $courses->thumbnail }}" alt="" class="course-detail-img">
+                @if (Auth::user()->getCourseUser($courses->id) > 0)
+                    <div>
+                        <label for="file">Progress:</label>
+                        <progress id="file" value="{{ $lessons->learningProgress }}" max="100"></progress>
+                        <label for="file">{{ $lessons->learning_progress }}%</label>
+                    </div>
+                @endif
                 <div id="accordion" class="course-detail-intro-content">
                     <div class="pad-bor">
                         <div class="d-flex course-detail-intro-content-item">
@@ -57,6 +64,23 @@
                                     <p class="course-content-item-text"><img src="{{ $program->img_path }}" alt="" class="program-img"></p>
                                     <p class="lesson-type">{{ $program->type }}</p>
                                     <p class="course-content-item-text">{{ $program->name }}</p>
+                                    @if (Auth::user()->getCourseUser($courses->id) > 0)
+                                    <form action="{{ route('user-lesson.update', $lessons->id) }}" method="POST">
+                                        @method('PUT')
+                                        @csrf
+                                        <input type="hidden" name="program_lesson" value="1">
+                                        <input type="hidden" name="documnet_id" value="{{ $program->id }}">
+                                        <button type="submit" class="btn btn-success" @if ($program->document_by_user_id)
+                                                disabled
+                                            @endif>
+                                            @if ($program->document_by_user_id)
+                                                Accomplished
+                                            @else
+                                            complete
+                                            @endif
+                                        </button>
+                                    </form>
+                                    @endif
                                     <a href="" class="preview d-flex justify-content-center align-items-center">Preview</a>
                                 </div>
                                 @endforeach
@@ -101,9 +125,20 @@
                         <p class="">price:</p>
                         <p class="ml-5">{{ $courses->course_price }}</p>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <button class="btn-end" type="button">kết thúc khóa học</button>
-                    </div>
+                    <form action="{{ route('user-course.update', $courses->id)}}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <div class="d-flex justify-content-center">
+                            <button class="btn-end" @if (session()->has('mess_end_course'))
+                                disabled
+                            @endif type="submit">
+                            @if (session()->has('mess_end_course'))
+                                {{ session()->get('mess_end_course') }}
+                            @else
+                                kết thúc khóa học
+                            @endif </button>
+                        </div>
+                    </form>
                 </div>
                 <div class="course-des-other-course">
                     <div class="title">other course</div>

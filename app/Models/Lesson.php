@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Lesson extends Model
 {
@@ -22,7 +23,7 @@ class Lesson extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_lesson', 'user_id', 'lesson_id');
+        return $this->belongsToMany(User::class, 'user_lessons', 'lesson_id', 'user_id');
     }
 
     public function documents()
@@ -42,5 +43,15 @@ class Lesson extends Model
             $query->where('name', 'LIKE', '%' . $data['key'] . '%');
         }
         return $query;
+    }
+
+    public function getLearningProgressAttribute()
+    {
+        return $this->users()->where('user_id', Auth::id())->pluck('progress')->first();
+    }
+
+    public function getLessonByUserIdAttribute()
+    {
+        return $this->users()->pluck('user_id')->count();
     }
 }

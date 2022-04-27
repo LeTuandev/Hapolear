@@ -37,15 +37,29 @@
                     </div>
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                            <form action="{{ route('courses.show', $courses->id) }}" method="GET">
-                                <div class="course-header course-padd">
-                                    <div class="list-course-header course-bot">
-                                        <div class="list-course-search"><input type="text" placeholder="search..." class="search" name="key" value=""><i class="fa-solid fa-magnifying-glass search-icon"></i></div>
-                                        <button class="btn btn-search btn-mar" type="submit">tìm kiếm</button>
-                                        <button class="btn btn-join" type="submit">tham gia khóa học</button>
+                            <div class="d-flex  course-bot">
+                                <form action="{{ route('courses.show', $courses->id) }}" method="GET">
+                                    <div class="course-header course-padd">
+                                        <div class="list-course-header">
+                                            <div class="list-course-search"><input type="text" placeholder="search..." class="search" name="key" value=""><i class="fa-solid fa-magnifying-glass search-icon"></i></div>
+                                            <button class="btn btn-search btn-mar" type="submit">tìm kiếm</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                                <form action="{{ route('user-course.store') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="course_id" value="{{ $courses->id }}">
+                                    <button class="btn btn-join" @if (session()->has('mess_course'))
+                                        disabled
+                                    @endif type="submit">
+                                    @if (session()->has('mess_course'))
+                                        {{ session()->get('mess_course') }}
+                                    @else
+                                    tham gia khóa học
+                                    @endif
+                                   </button>
+                                </form>
+                            </div>
                             @include('lessons.lesson')
                         </div>
                     </div>
@@ -56,11 +70,11 @@
                                 @foreach ($teachers as $teacher)
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <div class="d-flex teacher-img mt-4"><img src="{{ $teachers->avatar }}" alt="" class="w-100 rounded-circle"></div>
+                                        <div class="d-flex teacher-img mt-4"><img src="{{ $teacher->avatar }}" alt="" class="w-100 rounded-circle"></div>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="mt-5">
-                                            <div>{{ $teachers->name }}</div>
+                                            <div>{{ $teacher->name }}</div>
                                             <div>
                                                 <a href=""><i class="fa-brands fa-google-plus"></i></a>
                                                 <a href=""><i class="fa-brands fa-facebook"></i></a>
@@ -70,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-12">{{ $teachers->about }}</div>
+                                    <div class="col-md-12">{{ $teacher->about }}</div>
                                 </div>
                                 @endforeach
                             </div>
