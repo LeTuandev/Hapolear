@@ -12,5 +12,9 @@
             'zero' => 0,
             'one' => 1,
         ],
+        'check_course_user' => [
+            'zero' => 0,
+        ],
+        'course_price' => 0,
     ];
 ?>

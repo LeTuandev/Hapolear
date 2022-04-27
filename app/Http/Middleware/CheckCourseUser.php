@@ -17,7 +17,7 @@ class CheckCourseUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->getCourseUser($request['course_id']) > 0) {
+        if (Auth::user()->getCourseUser($request['course_id']) > config('filter.check_course_user.zero')) {
             return redirect()->back()->with('mess_course', 'you have already attended course');
         } else {
             return $next($request);

@@ -67,7 +67,7 @@ class Courses extends Model
 
     public function getCoursePriceAttribute()
     {
-        return $this->price = 0 ? 'free' : number_format($this->price) .'$';
+        return $this->price = config('filter.course_price') ? 'free' : number_format($this->price) .'$';
     }
 
     public function getStatusCourseAttribute()
