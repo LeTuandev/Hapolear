@@ -14,7 +14,7 @@ class LessonController extends Controller
         $courses = Courses::find($courseId);
         $otherCourses = Courses::otherCourse()->get();
         $lessons = Lesson::find($lessonId);
-        if(Auth::user()->checkUserLesson($lessonId) == 0) {
+        if (Auth::user()->checkUserLesson($lessonId) == 0) {
             $lessons->users()->attach(Auth::user()->id, ['progress' => config('filter.progress')]);
         }
         $programs = $lessons->documents()->get();

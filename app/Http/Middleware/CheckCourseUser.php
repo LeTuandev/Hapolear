@@ -19,8 +19,7 @@ class CheckCourseUser
     {
         if (Auth::user()->getCourseUser($request['course_id']) > 0) {
             return redirect()->back()->with('mess_course', 'you have already attended course');
-        }
-        else {
+        } else {
             return $next($request);
         }
     }

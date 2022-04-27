@@ -13,7 +13,7 @@ class UserLessonController extends Controller
     {
         $lessons = Lesson::find($id);
         $data = [
-            'progress' => $lessons->learning_progress,
+            'progress' => $lessons->learningProgress,
             'program_lesson' => $request['program_lesson'],
             'sumDocument' => $lessons->documents()->count(),
         ];

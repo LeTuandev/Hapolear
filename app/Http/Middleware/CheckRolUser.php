@@ -18,8 +18,8 @@ class CheckRolUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()) {
-            if(Auth::user()->role == User::ROLE_USER) {
+        if (Auth::check()) {
+            if (Auth::user()->role == User::ROLE_USER) {
                 return $next($request);
             }
         }
