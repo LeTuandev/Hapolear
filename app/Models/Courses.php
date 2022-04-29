@@ -32,7 +32,7 @@ class Courses extends Model
 
     public function reviews()
     {
-        return $this->hasMany(Reviews::class);
+        return $this->hasMany(Reviews::class, 'course_id');
     }
 
     public function tags()
@@ -78,6 +78,11 @@ class Courses extends Model
     public function getLessonById($data)
     {
         return $this->lessons()->where('id', $data)->first();
+    }
+
+    public function getVote($data)
+    {
+        return $this->reviews()->where('votes', $data)->get()->count();
     }
 
     public function scopeSearch($query, $data)

@@ -23,7 +23,6 @@ class CheckRolUser
                 return $next($request);
             }
         }
-
         return redirect()->back()->with('message', 'CAN NOT JOINED');
     }
 }

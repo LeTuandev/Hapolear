@@ -144,9 +144,9 @@
 }
 
 .course-bot {
-    border-bottom: 1px solid #e2e0e0;
-    padding-bottom: 3%;
-  }
+  border-bottom: 1px solid #e2e0e0;
+  padding-bottom: 3%;
+}
 
 .course-des-other-course {
   background-color: white;
@@ -205,4 +205,94 @@
 .teacher-img {
   width: 100px;
   height: 100px;
+}
+
+.review-img {
+  background: #505353;
+  border-radius: 5px;
+  padding: 30px;
+
+  .text-vote {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 74px;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+
+  .program-rating {
+    font-family: "UTM BryantLG";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+}
+
+.progress-items {
+  border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.user-img {
+  width: 40px;
+  height: 40px;
+}
+
+.title-review {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: #505353;
+}
+
+.time-review {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+  color: #bdb9b9;
+}
+
+.title-leave-review {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.02em;
+  color: #505353;
+}
+
+.h-input {
+  height: 113px;
+}
+
+.btn-send {
+  background: #b2d235;
+  box-shadow: inset 0px 1.5px 2px #6f8710;
+  border-radius: 22px;
+  color: white;
+  width: 15%;
+}
+
+.fa-star {
+  color: #d8d8d8;
+}
+
+.fa-star.selected {
+  color: #f2c54f;
+}
+
+.ml-progress {
+  margin-left: -20%;
 }

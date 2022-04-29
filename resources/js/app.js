@@ -6,3 +6,4 @@ require('./mess');
 require('./auth');
 require('./select2');
 require('./filter');
+require('./votes')

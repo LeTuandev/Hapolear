@@ -7,6 +7,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\UserCourseController;
 use App\Http\Controllers\UserLessonController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,5 @@ route::middleware(['auth', 'student', 'isJoined'])->group(function () {
     Route::resource('courses.lessons', LessonController::class);
     Route::resource('user-lesson', UserLessonController::class);
 });
+Route::resource('course_review', ReviewController::class)->middleware('auth');
 Auth::routes();

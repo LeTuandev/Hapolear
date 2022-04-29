@@ -11,6 +11,7 @@ use App\Models\Courses;
 use App\Models\User;
 use App\Models\Tags;
 use App\Models\Lesson;
+use App\Models\Reviews;
 
 class CourseController extends Controller
 {
@@ -28,6 +29,20 @@ class CourseController extends Controller
         $otherCourses = Courses::otherCourse()->get();
         $lessons = $courses->lessons()->search($request->all(), $id)->paginate(config('filter.item_lesson'));
         $teachers = $courses->teachers()->get();
-        return view('courses.show', compact('courses', 'lessons', 'request', 'otherCourses', 'teachers'));
+        $reviewCounts = $courses->reviews()->get()->count();
+        $reviews = $courses->reviews()->get();
+        $voteCountOne = $courses->getVote(1);
+        $voteCountTwo = $courses->getVote(2);
+        $voteCountThree = $courses->getVote(3);
+        $voteCountFour = $courses->getVote(4);
+        $voteCountFive = $courses->getVote(5);
+        $voteOne = ($courses->getVote(1)/$courses->reviews()->pluck('votes')->count()) * 100;
+        $voteTwo = ($courses->getVote(2)/$courses->reviews()->pluck('votes')->count()) * 100;
+        $voteThree = ($courses->getVote(3)/$courses->reviews()->pluck('votes')->count()) * 100;
+        $voteFour = ($courses->getVote(4)/$courses->reviews()->pluck('votes')->count()) * 100;
+        $voteFive = ($courses->getVote(5)/$courses->reviews()->pluck('votes')->count()) * 100;
+        return view('courses.show', compact('courses', 'lessons', 'request', 'otherCourses',
+        'teachers', 'reviewCounts', 'reviews', 'voteOne', 'voteTwo',
+        'voteThree', 'voteFour', 'voteFive', 'voteCountOne', 'voteCountTwo', 'voteCountThree', 'voteCountFour', 'voteCountFive'));
     }
 }
