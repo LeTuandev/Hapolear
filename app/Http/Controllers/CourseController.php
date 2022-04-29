@@ -41,6 +41,6 @@ class CourseController extends Controller
         $voteThree = ($courses->getVote(3) / $courses->reviews()->pluck('votes')->count()) * 100;
         $voteFour = ($courses->getVote(4) / $courses->reviews()->pluck('votes')->count()) * 100;
         $voteFive = ($courses->getVote(5) / $courses->reviews()->pluck('votes')->count()) * 100;
-        return view('courses.show', compact('courses', 'lessons', 'request', 'otherCourses','teachers', 'reviewCounts', 'reviews', 'voteOne', 'voteTwo', 'voteThree', 'voteFour', 'voteFive', 'voteCountOne', 'voteCountTwo', 'voteCountThree', 'voteCountFour', 'voteCountFive'));
+        return view('courses.show', compact('courses', 'lessons', 'request', 'otherCourses', 'teachers', 'reviewCounts', 'reviews', 'voteOne', 'voteTwo', 'voteThree', 'voteFour', 'voteFive', 'voteCountOne', 'voteCountTwo', 'voteCountThree', 'voteCountFour', 'voteCountFive'));
     }
 }
