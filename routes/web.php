@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\UserCourseController;
+use App\Http\Controllers\UserLessonController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +22,10 @@ use App\Http\Controllers\LessonController;
 
 Route::resource('', HomeController::class);
 Route::resource('courses', CourseController::class);
-Route::resource('courses.lessons', LessonController::class);
+route::middleware(['auth', 'student', 'isJoined'])->group(function () {
+    Route::resource('user-course', UserCourseController::class);
+    Route::resource('courses.lessons', LessonController::class);
+    Route::resource('user-lesson', UserLessonController::class);
+});
+Route::resource('course_review', ReviewController::class)->middleware('auth');
 Auth::routes();

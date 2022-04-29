@@ -37,15 +37,29 @@
                     </div>
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                            <form action="{{ route('courses.show', $courses->id) }}" method="GET">
-                                <div class="course-header course-padd">
-                                    <div class="list-course-header course-bot">
-                                        <div class="list-course-search"><input type="text" placeholder="search..." class="search" name="key" value=""><i class="fa-solid fa-magnifying-glass search-icon"></i></div>
-                                        <button class="btn btn-search btn-mar" type="submit">tìm kiếm</button>
-                                        <button class="btn btn-join" type="submit">tham gia khóa học</button>
+                            <div class="d-flex  course-bot">
+                                <form action="{{ route('courses.show', $courses->id) }}" method="GET">
+                                    <div class="course-header course-padd">
+                                        <div class="list-course-header">
+                                            <div class="list-course-search"><input type="text" placeholder="search..." class="search" name="key" value=""><i class="fa-solid fa-magnifying-glass search-icon"></i></div>
+                                            <button class="btn btn-search btn-mar" type="submit">tìm kiếm</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                                <form action="{{ route('user-course.store') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="course_id" value="{{ $courses->id }}">
+                                    <button class="btn btn-join" @if (session()->has('mess_course'))
+                                        disabled
+                                    @endif type="submit">
+                                    @if (session()->has('mess_course'))
+                                        {{ session()->get('mess_course') }}
+                                    @else
+                                    tham gia khóa học
+                                    @endif
+                                   </button>
+                                </form>
+                            </div>
                             @include('lessons.lesson')
                         </div>
                     </div>
@@ -56,11 +70,11 @@
                                 @foreach ($teachers as $teacher)
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <div class="d-flex teacher-img mt-4"><img src="{{ $teachers->avatar }}" alt="" class="w-100 rounded-circle"></div>
+                                        <div class="d-flex teacher-img mt-4"><img src="{{ $teacher->avatar }}" alt="" class="w-100 rounded-circle"></div>
                                     </div>
                                     <div class="col-md-10">
                                         <div class="mt-5">
-                                            <div>{{ $teachers->name }}</div>
+                                            <div>{{ $teacher->name }}</div>
                                             <div>
                                                 <a href=""><i class="fa-brands fa-google-plus"></i></a>
                                                 <a href=""><i class="fa-brands fa-facebook"></i></a>
@@ -70,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-12">{{ $teachers->about }}</div>
+                                    <div class="col-md-12">{{ $teacher->about }}</div>
                                 </div>
                                 @endforeach
                             </div>
@@ -78,7 +92,123 @@
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                         <div class="card-body">
-                            other course
+                            <div class="program-lesson border-bottom"><label for="">{{ $reviewCounts }}</label> Reviews</div>
+                            <div class="row mt-3 border-bottom pb-3">
+                                <div class="col-md-4">
+                                    <div class="d-flex flex-column justify-content-center align-items-center review-img">
+                                        <div class="text-vote">{{ $reviewCounts }}</div>
+                                        <div class="icon-star">
+                                            <i class="ratings_stars fa fa-star text-warning" data-rating="1"></i>
+                                            <i class="ratings_stars fa fa-star text-warning" data-rating="2"></i>
+                                            <i class="ratings_stars fa fa-star text-warning" data-rating="3"></i>
+                                            <i class="ratings_stars fa fa-star text-warning" data-rating="4"></i>
+                                            <i class="ratings_stars fa fa-star text-warning" data-rating="5"></i>
+                                        </div>
+                                        <div class="program-rating">{{ $reviewCounts }} Rattings</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="progress-items p-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">5 Stars</div>
+                                            <div class="col-md-7">
+                                                <div class="progress ml-progress">
+                                                    <div class="progress-bar" role="progressbar"  style="width: {{ $voteFive }}%" aria-valuenow="{{ $voteFive }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">{{ $voteCountFive }}</div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">4 Stars</div>
+                                            <div class="col-md-7">
+                                                <div class="progress ml-progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $voteFour }}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">{{ $voteCountFour }}</div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">3 Stars</div>
+                                            <div class="col-md-7">
+                                                <div class="progress ml-progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $voteThree }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">{{ $voteCountThree }}</div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">2 Stars</div>
+                                            <div class="col-md-7">
+                                                <div class="progress ml-progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $voteTwo }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">{{ $voteCountTwo }}</div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-md-3">1 Stars</div>
+                                            <div class="col-md-7">
+                                                <div class="progress ml-progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $voteOne }}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">{{ $voteCountOne }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="mt-3">
+                                        <label class="title-review">Show All Reviews</label>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                    @foreach ($reviews as $review)
+                                    <div class="border-bottom pb-3">
+                                        <div class="d-flex align-items-center mt-3">
+                                            <div class="d-flex"><img class="user-img rounded-circle" src="{{ $review->user->avatar }}" alt=""></div>
+                                            <div class="ml-3 title-review">{{ $review->user->name}}</div>
+                                            <div class="ml-3">
+                                                @for ($i = 1; $i <= $review->votes; $i++)
+                                                        <i class="fa-solid fa-star text-warning"></i>
+                                                    @endfor
+                                                    @for ($i = 5; $i > $review->votes; $i--)
+                                                        <i class="fa-solid fa-star text-light"></i>
+                                                    @endfor
+                                            </div>
+                                            <div class="ml-3 time-review">{{ $review->user->created_at}}</div>
+                                        </div>
+                                        <div class="mt-3">
+                                            {{ $review->comment }}
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    <div class="leave-review mt-4">
+                                        <form action="{{ route('course_review.store') }}" method="POST">
+                                            @csrf
+                                            <div class="title-leave-review">Leave a review</div>
+                                            <div class="mt-3">message</div>
+                                            <input type="hidden" name="course_id" value="{{ $courses->id }}">
+                                            <input type="text" class="w-100 h-input border" name="about" value="">
+                                            <input type="hidden" id="rating" name="rating" value="0">
+                                            <div class="rating d-flex align-items-center mt-4">
+                                                <span>Vote</span>
+                                                <div class="ml-4">
+                                                    <i class="ratings_stars fa fa-star" data-rating="1"></i>
+                                                    <i class="ratings_stars fa fa-star" data-rating="2"></i>
+                                                    <i class="ratings_stars fa fa-star" data-rating="3"></i>
+                                                    <i class="ratings_stars fa fa-star" data-rating="4"></i>
+                                                    <i class="ratings_stars fa fa-star" data-rating="5"></i>
+                                                </div>
+                                                <span class="ml-4">(stars)</span>
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <button type="submit" class="btn-send border border-white p-2">send</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

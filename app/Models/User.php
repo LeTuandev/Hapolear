@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -55,12 +56,17 @@ class User extends Authenticatable
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class, 'user_lesson', 'user_id', 'lesson_id');
+        return $this->belongsToMany(Lesson::class, 'user_lessons', 'user_id', 'lesson_id')->withPivot('progress')->withTimestamps();
+    }
+
+    public function documents()
+    {
+        return $this->belongsToMany(Document::class, 'user_documents', 'user_id', 'documnet_id')->withTimestamps();
     }
 
     public function courses()
     {
-        return $this->belongsToMany(Courses::class, 'user_course', 'user_id', 'course_id');
+        return $this->belongsToMany(Courses::class, 'user_courses', 'user_id', 'course_id')->withPivot('status')->withTimestamps();
     }
 
     public function teacherCourses()
@@ -76,5 +82,25 @@ class User extends Authenticatable
     public function scopeTeacher($query)
     {
         return $query->where('role', self::ROLE_TEACHER);
+    }
+
+    public function statusCourse($data)
+    {
+        return $this->courses()->where('course_id', $data)->pluck('status')->first();
+    }
+
+    public function progressLesson($data)
+    {
+        return $this->lessons()->where('lesson_id', $data)->pluck('progress')->first();
+    }
+
+    public function checkUserLesson($data)
+    {
+        return $this->lessons()->where('lesson_id', $data)->count();
+    }
+
+    public function getCourseUser($data)
+    {
+        return $this->courses()->where('course_id', $data)->count();
     }
 }

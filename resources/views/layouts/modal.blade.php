@@ -18,6 +18,9 @@
                                         @if (session()->has('success'))
                                             <div class="alert alert-success reg-success" id="message">{{ session()->get('success')}}</div>
                                         @endif
+                                        @if(session()->has('mess_login'))
+                                        <div class="mess-login" id="messLogin"></div>
+                                        @endif
                                         <div class="form-group">
                                             <label>Username:</label>
                                             <input type="text" name="username" class="form-control @error('username')

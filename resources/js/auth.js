@@ -1,6 +1,6 @@
 $(document).ready(function () {
   if ($('.form-control').hasClass('form-log')) {
-    $('#loginModal').modal();
+    $('#loginModal').modal('show');
     $('#closeRegisterForm').css('display', 'none');
     $('#btnLogin').addClass('link-login');
     $('#btnRegister').removeClass('link-register');
@@ -20,8 +20,8 @@ $(document).ready(function () {
     $('#btnRegister').removeClass('link-register');
   }
 
-  if ($('#error').hasClass('alert-danger')) {
-    $('#loginModal').modal();
+  if ($('#error').hasClass('alert-danger') || $('#messLogin').hasClass('mess-login')) {
+    $('#loginModal').modal('show');
     $('#closeRegisterForm').css('display', 'none');
     $('#btnLogin').addClass('link-login');
     $('#btnRegister').removeClass('link-register');
