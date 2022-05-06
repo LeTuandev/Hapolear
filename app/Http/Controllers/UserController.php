@@ -25,7 +25,7 @@ class UserController extends Controller
             'phone' => $request['phone'],
             'address' => $request['address'],
             'about' => $request['about'],
-            'birth' =>$request['date']
+            'birth' => $request['date']
         ];
         Auth::user()->update($data);
         return redirect(url()->previous());
