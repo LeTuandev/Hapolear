@@ -12,7 +12,7 @@
                         <i class="fas fa-user icon-auth"></i>{{Auth::user()->name}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                        <a href="#" class="dropdown-item">profile</a>
+                        <a href="{{ route('user-profile.show', Auth::user()->id)}}" class="dropdown-item">profile</a>
                         <form action="{{ route('logout') }}" method="POST" id="logoutForm">
                             @csrf
                             <button class="dropdown-item">logout</button>

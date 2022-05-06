@@ -18,24 +18,27 @@
                                         @if (session()->has('success'))
                                             <div class="alert alert-success reg-success" id="message">{{ session()->get('success')}}</div>
                                         @endif
+                                        @if(session()->has('mess_login'))
+                                        <div class="mess-login" id="messLogin"></div>
+                                        @endif
                                         <div class="form-group">
                                             <label>Username:</label>
-                                            <input type="text" name="username" class="form-control @error('username')
+                                            <input type="text" name="login_username" class="form-control @error('login_username')
                                                 is-invalid form-log
                                             @enderror"
-                                                placeholder="User Name" />
-                                            @if ($errors->has('username'))
-                                            <p class="text-danger">{{ $errors->first('username') }}</p>
+                                            placeholder="User Name" value="{{ old('login_username') }}"/>
+                                            @if ($errors->has('login_username'))
+                                            <p class="text-danger">{{ $errors->first('login_username') }}</p>
                                             @endif
                                         </div>
                                         <div class="form-group">
                                             <label>Password:</label>
-                                            <input type="password" name="password" class="form-control @error('password')
+                                            <input type="password" name="login_password" class="form-control @error('login_password')
                                                 is-invalid form-log
                                             @enderror"
-                                                placeholder="Password" />
-                                            @if ($errors->has('password'))
-                                            <p class="text-danger">{{ $errors->first('password') }}</p>
+                                                placeholder="Password" value="{{ old('login_password') }}"/>
+                                            @if ($errors->has('login_password'))
+                                            <p class="text-danger">{{ $errors->first('login_password') }}</p>
                                             @endif
                                         </div>
                                         <div class="checkbox-a">
@@ -61,7 +64,7 @@
                                             <input type="text" name="username" class="form-control @error('username')
                                                 is-invalid form-reg
                                             @enderror"
-                                                placeholder="User Name" />
+                                                placeholder="User Name" value="{{ old('username') }}"/>
                                             @if ($errors->has('username'))
                                             <p class="text-danger">{{ $errors->first('username') }}</p>
                                             @endif
@@ -70,7 +73,7 @@
                                             <label>Email:</label>
                                             <input type="email" name="email" class="form-control @error('email')
                                                 is-invalid form-reg
-                                            @enderror" placeholder="Email" />
+                                            @enderror" placeholder="Email" value="{{ old('email') }}"/>
                                             @if ($errors->has('email'))
                                             <p class="text-danger">{{ $errors->first('email') }}</p>
                                             @endif
@@ -80,7 +83,7 @@
                                             <input type="password" name="password" class="form-control @error('password')
                                                 is-invalid form-reg
                                             @enderror"
-                                                placeholder="Password" />
+                                                placeholder="Password" value="{{ old('password') }}"/>
                                             @if ($errors->has('password'))
                                             <p class="text-danger">{{ $errors->first('password') }}</p>
                                             @endif
@@ -90,7 +93,7 @@
                                             <input type="password" name="password_confirm" class="form-control @error('password_confirm')
                                             is-invalid form-reg
                                             @enderror"
-                                                placeholder="Password" />
+                                                placeholder="Password" value="{{ old('password') }}"/>
                                             @if ($errors->has('password_confirm'))
                                             <p class="text-danger">{{ $errors->first('password_confirm') }}</p>
                                             @endif
