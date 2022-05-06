@@ -23,22 +23,22 @@
                                         @endif
                                         <div class="form-group">
                                             <label>Username:</label>
-                                            <input type="text" name="username" class="form-control @error('username')
+                                            <input type="text" name="login_username" class="form-control @error('login_username')
                                                 is-invalid form-log
                                             @enderror"
                                                 placeholder="User Name" />
-                                            @if ($errors->has('username'))
-                                            <p class="text-danger">{{ $errors->first('username') }}</p>
+                                            @if ($errors->has('login_username'))
+                                            <p class="text-danger">{{ $errors->first('login_username') }}</p>
                                             @endif
                                         </div>
                                         <div class="form-group">
                                             <label>Password:</label>
-                                            <input type="password" name="password" class="form-control @error('password')
+                                            <input type="password" name="login_password" class="form-control @error('login_password')
                                                 is-invalid form-log
                                             @enderror"
                                                 placeholder="Password" />
-                                            @if ($errors->has('password'))
-                                            <p class="text-danger">{{ $errors->first('password') }}</p>
+                                            @if ($errors->has('login_password'))
+                                            <p class="text-danger">{{ $errors->first('login_password') }}</p>
                                             @endif
                                         </div>
                                         <div class="checkbox-a">

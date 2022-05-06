@@ -3,8 +3,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item breadcrumb-item-custom"><a href="#">Home</a></li>
-      <li class="breadcrumb-item"><a href="#">All Course</a></li>
-      <li class="breadcrumb-item"><a href="#">Courses Detail</a></li>
+      <li class="breadcrumb-item"><a href="{{ route('courses.index') }}">All Course</a></li>
+      <li class="breadcrumb-item"><a href="{{ route('courses.show', $courses->id)}}">Courses Detail</a></li>
       <li class="breadcrumb-item active" aria-current="page">Lessons Detail</li>
     </ol>
 </nav>
@@ -74,7 +74,7 @@
                                                 disabled
                                             @endif>
                                             @if ($program->document_by_user_id)
-                                                Accomplished
+                                                completed
                                             @else
                                             complete
                                             @endif
@@ -129,14 +129,30 @@
                         @csrf
                         @method('PUT')
                         <div class="d-flex justify-content-center">
-                            <button class="btn-end" @if (session()->has('mess_end_course'))
-                                disabled
-                            @endif type="submit">
-                            @if (session()->has('mess_end_course'))
-                                {{ session()->get('mess_end_course') }}
+                            @if ($courses->getStatusCourseAttribute() == 1)
+                                <button class="btn-end btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">kết thúc khóa học</button>
                             @else
-                                kết thúc khóa học
-                            @endif </button>
+                                <button class="btn-end" disabled type="submit" >FINISHED</button>
+                            @endif
+                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content bg-white">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Hapo Learn</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Do you want to end for the course?
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="submmit" class="btn btn-primary">kết thúc khóa học</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                         </div>
                     </form>
                 </div>

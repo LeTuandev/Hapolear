@@ -3,7 +3,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item breadcrumb-item-custom"><a href="#">Home</a></li>
-      <li class="breadcrumb-item"><a href="#">All Course</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('courses.index')}}">All Course</a></li>
       <li class="breadcrumb-item active" aria-current="page">Courses Detail</li>
     </ol>
 </nav>
@@ -49,15 +49,38 @@
                                 <form action="{{ route('user-course.store') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="course_id" value="{{ $courses->id }}">
-                                    <button class="btn btn-join" @if (session()->has('mess_course'))
-                                        disabled
-                                    @endif type="submit">
-                                    @if (session()->has('mess_course'))
-                                        {{ session()->get('mess_course') }}
+                                    @if ($courses->getStatusCourseAttribute() == 1)
+                                        <button class="btn btn-join" disabled type="submit">
+                                            JOINED
+                                        </button>
+                                    @elseif ($courses->getStatusCourseAttribute() == 2)
+                                        <button class="btn btn-join" disabled type="submit">
+                                            FINISHED
+                                        </button>
                                     @else
-                                    tham gia khóa học
+                                        <button type="button" class="btn ml-5 btn-join" data-toggle="modal" data-target="#exampleModal">
+                                            Tham gia khóa học
+                                        </button>
                                     @endif
-                                   </button>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content bg-white">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Hapo Learn</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Do you want to register for the course?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submmit" class="btn btn-primary">Tham gia khóa học</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
                                 </form>
                             </div>
                             @include('lessons.lesson')
@@ -96,13 +119,14 @@
                             <div class="row mt-3 border-bottom pb-3">
                                 <div class="col-md-4">
                                     <div class="d-flex flex-column justify-content-center align-items-center review-img">
-                                        <div class="text-vote">{{ $reviewCounts }}</div>
+                                        <div class="text-vote">{{ $reviewAvg }}</div>
                                         <div class="icon-star">
+                                            @for ($i = 1; $i <= $reviewAvg; $i++)
                                             <i class="ratings_stars fa fa-star text-warning" data-rating="1"></i>
-                                            <i class="ratings_stars fa fa-star text-warning" data-rating="2"></i>
-                                            <i class="ratings_stars fa fa-star text-warning" data-rating="3"></i>
-                                            <i class="ratings_stars fa fa-star text-warning" data-rating="4"></i>
-                                            <i class="ratings_stars fa fa-star text-warning" data-rating="5"></i>
+                                            @endfor
+                                            @for ($i = 5; $i > $reviewAvg; $i--)
+                                            <i class="fa-solid fa-star star-special"></i>
+                                            @endfor
                                         </div>
                                         <div class="program-rating">{{ $reviewCounts }} Rattings</div>
                                     </div>

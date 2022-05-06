@@ -30,6 +30,7 @@ class CourseController extends Controller
         $lessons = $courses->lessons()->search($request->all(), $id)->paginate(config('filter.item_lesson'));
         $teachers = $courses->teachers()->get();
         $reviewCounts = $courses->reviews()->get()->count();
+        $reviewAvg = $courses->getAvgVoteAttribute();
         $reviews = $courses->reviews()->get();
         $voteCountOne = $courses->getVote(1);
         $voteCountTwo = $courses->getVote(2);
@@ -41,6 +42,6 @@ class CourseController extends Controller
         $voteThree = ($courses->getVote(3) / $courses->reviews()->pluck('votes')->count()) * 100;
         $voteFour = ($courses->getVote(4) / $courses->reviews()->pluck('votes')->count()) * 100;
         $voteFive = ($courses->getVote(5) / $courses->reviews()->pluck('votes')->count()) * 100;
-        return view('courses.show', compact('courses', 'lessons', 'request', 'otherCourses', 'teachers', 'reviewCounts', 'reviews', 'voteOne', 'voteTwo', 'voteThree', 'voteFour', 'voteFive', 'voteCountOne', 'voteCountTwo', 'voteCountThree', 'voteCountFour', 'voteCountFive'));
+        return view('courses.show', compact('courses', 'lessons', 'request', 'otherCourses', 'teachers', 'reviewCounts', 'reviews', 'voteOne', 'voteTwo', 'voteThree', 'voteFour', 'voteFive', 'voteCountOne', 'voteCountTwo', 'voteCountThree', 'voteCountFour', 'voteCountFive', 'reviewAvg'));
     }
 }

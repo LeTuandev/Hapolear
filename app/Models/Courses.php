@@ -72,7 +72,8 @@ class Courses extends Model
 
     public function getStatusCourseAttribute()
     {
-        return $this->users()->pluck('status');
+         $statusCourse = UserCourse::where('user_id', Auth::id())->where('course_id', $this->id)->pluck('status')->first();
+         return $statusCourse;
     }
 
     public function getLessonById($data)
@@ -83,6 +84,11 @@ class Courses extends Model
     public function getVote($data)
     {
         return $this->reviews()->where('votes', $data)->get()->count();
+    }
+
+    public function getAvgVoteAttribute()
+    {
+        return number_format($this->reviews()->pluck('votes')->avg(), 2);
     }
 
     public function scopeSearch($query, $data)
