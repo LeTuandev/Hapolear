@@ -11,13 +11,18 @@ class UserController extends Controller
 {
     public function show($id)
     {
-        $courses = Auth::user()->courses()->take(4)->get();
+        $courses = Auth::user()->courses()->inRandomOrder()->get();
         return view('layouts.profile', compact('courses'));
     }
 
     public function update(UpdateRequest $request, $id)
     {
-        $uploadedFileUrl = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
+        if($request->file('file')) {
+            $uploadedFileUrl = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
+        }
+        else {
+            $uploadedFileUrl = Auth::user()->avatar;
+        }
         $data = [
             'avatar' => $uploadedFileUrl,
             'fullname' => $request['name'],

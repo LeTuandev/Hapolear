@@ -10,6 +10,7 @@ use App\Http\Controllers\UserLessonController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\Api\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,6 @@ route::middleware(['auth', 'student'])->group(function () {
 });
 Route::resource('course_review', ReviewController::class)->middleware('auth');
 Route::resource('user-profile', UserController::class);
+Route::get('/google', [GoogleController::class, 'getGoogleSignInUrl']);
+Route::get('api/callback', [GoogleController::class, 'loginCallback']);
 Auth::routes();

@@ -21,7 +21,6 @@
                 </div>
             @else
                 <a href="#" data-toggle="modal" data-target="#loginModal" class="menu-nav" id="loginRegister">login/register</a>
-                <a href="#" class="menu-nav">profile</a>
             @endif
         </nav>
     </div>

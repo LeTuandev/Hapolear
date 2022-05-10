@@ -45,7 +45,7 @@
                                             <input type="checkbox" />
                                             <label class="control control--checkbox mb-0"><span class="caption">Remember
                                                     me</span></label>
-                                            <a href="#">Forgot password</a>
+                                            <a href="{{ route('password.request') }}">Forgot password</a>
                                         </div>
                                         @if (session()->has('error'))
                                             <div class="alert alert-danger log-error" id="error">{{ session()->get('error')}}</div>
@@ -53,7 +53,7 @@
                                         <button class="btn btn-success btn-login" type="submit">LOGIN</button>
                                     </form>
                                     <p class="line"><span>Login with</span></p>
-                                    <a class="login-gg" href="#"><i class="fa-brands fa-google-plus-g"></i>Google</a>
+                                    <a class="login-gg" href="{{ url('/google')}}"><i class="fa-brands fa-google-plus-g"></i>Google</a>
                                     <a class="login-rg" href="#"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
                                 </div>
                                 <div id="closeRegisterForm">

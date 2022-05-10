@@ -38,7 +38,7 @@
                 <span class="title">My Course</span>
             </div>
             <div class="my-course mt-2"></div>
-            <div class="d-flex justify-content-center mt-4">
+            <div class="d-flex justify-content-center mt-4 flex-wrap">
                 @foreach ($courses as $course )
                 <a href="" class="ml-4 text-decoration-none">
                     <img src="{{ $course->thumbnail }}" alt="" class="user-course-img rounded-circle" >
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-5 d-flex justify-content-end"><button type="submit">update</button></div>
+                <div class="mt-5 d-flex justify-content-end"><button type="submit" class="reset-btn">update</button></div>
             </div>
     </div>
 </div>
