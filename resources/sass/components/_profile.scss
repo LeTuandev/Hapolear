@@ -1,0 +1,117 @@
+.user-imgs {
+  width: 260px;
+  height: 260px;
+}
+
+.user-icon {
+  bottom: 7%;
+  left: 31%;
+  font-size: 30px;
+  line-height: 34px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.user-name {
+  margin-left: 19%;
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 31px;
+  letter-spacing: -0.02em;
+  color: #505353;
+}
+
+.user-email {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: #505353;
+}
+
+.text-second {
+  color: #662e93;
+}
+
+.text-hapo {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: #505353;
+}
+
+.my-course {
+  margin-top: 15%;
+  border-bottom: 1px solid #b2d235;
+
+  .title {
+    font-family: "UTM BryantLG";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 47px;
+    color: #505353;
+  }
+}
+
+.user-course-img {
+  width: 65px;
+  height: 65px;
+}
+
+.user-course-name {
+  font-family: "UTM BryantLG";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+  color: #505353;
+}
+
+.plush {
+  border: 1px solid #b2d235;
+  width: 65px;
+  height: 65px;
+
+  .icon {
+    color: #b2d235;
+  }
+}
+
+.h-about {
+  height: 159px;
+}
+
+.element {
+  display: inline-flex;
+  align-items: center;
+}
+i.fa-camera {
+  margin: 10px;
+  cursor: pointer;
+  font-size: 30px;
+}
+i:hover {
+  opacity: 0.6;
+}
+.ip-none {
+  display: none;
+}
+
+.row {
+  .in-valid {
+    border: 1px solid red;
+  }
+
+  .mess-danger {
+    color: red;
+  }
+}

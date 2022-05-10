@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Courses extends Model
 {
@@ -21,7 +22,7 @@ class Courses extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_courses', 'user_id', 'course_id');
+        return $this->belongsToMany(User::class, 'user_courses', 'user_id', 'course_id')->withPivot('status')->withTimestamps();
     }
 
     public function teachers()
@@ -31,7 +32,7 @@ class Courses extends Model
 
     public function reviews()
     {
-        return $this->hasMany(Reviews::class);
+        return $this->hasMany(Reviews::class, 'course_id');
     }
 
     public function tags()
@@ -66,7 +67,28 @@ class Courses extends Model
 
     public function getCoursePriceAttribute()
     {
-        return $this->price = 0 ? 'free' : number_format($this->price) .'$';
+        return $this->price = config('filter.course_price') ? 'free' : number_format($this->price) .'$';
+    }
+
+    public function getStatusCourseAttribute()
+    {
+         $statusCourse = UserCourse::where('user_id', Auth::id())->where('course_id', $this->id)->pluck('status')->first();
+         return $statusCourse;
+    }
+
+    public function getLessonById($data)
+    {
+        return $this->lessons()->where('id', $data)->first();
+    }
+
+    public function getVote($data)
+    {
+        return $this->reviews()->where('votes', $data)->get()->count();
+    }
+
+    public function getAvgVoteAttribute()
+    {
+        return number_format($this->reviews()->pluck('votes')->avg(), 2);
     }
 
     public function scopeSearch($query, $data)
