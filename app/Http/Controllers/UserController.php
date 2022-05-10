@@ -19,8 +19,7 @@ class UserController extends Controller
     {
         if ($request->file('file')) {
             $uploadedFileUrl = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
-            }
-        else {
+        } else {
             $uploadedFileUrl = Auth::user()->avatar;
         }
         $data = [
